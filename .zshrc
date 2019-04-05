@@ -36,3 +36,6 @@ antibody bundle < .zsh_plugins.txt
 
 # avoid language woes
 export LANG=en_US.UTF-8
+
+# personal aliases
+alias code=vscodium
