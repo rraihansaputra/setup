@@ -1,0 +1,24 @@
+# insert omz for goodness
+robbyrussell/oh-my-zsh
+
+# random plugins from antibody docs
+djui/alias-tips
+caarlos0/zsh-mkc
+
+# zsh-users plugin
+zsh-users/zsh-completions
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-history-substring-search
+
+# omz plugins
+robbyrussell/oh-my-zsh path:plugins/git
+robbyrussell/oh-my-zsh path:plugins/colored-man-pages
+robbyrussell/oh-my-zsh path:plugins/colorize
+robbyrussell/oh-my-zsh path:plugins/iterm2
+robbyrussell/oh-my-zsh path:plugins/mosh
+robbyrussell/oh-my-zsh path:plugins/osx
+robbyrussell/oh-my-zsh path:plugins/thefuck
+robbyrussell/oh-my-zsh path:plugins/tmux
+
+# my modified theme on github
+rraihansaputra/setup path:/zsh-plugins/re5et-rs.zsh-theme
