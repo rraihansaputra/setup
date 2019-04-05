@@ -1,0 +1,88 @@
+2018-07-11 20:42:16,827 DEBUG    root            Loaded Command Group: [u'gcloud', u'beta', u'functions']
+2018-07-11 20:42:16,835 DEBUG    root            Loaded Command Group: [u'gcloud', u'beta', u'functions', u'describe']
+2018-07-11 20:42:16,851 DEBUG    root            Running [gcloud.beta.functions.describe] with arguments: [NAME: "helloGET"]
+2018-07-11 20:42:18,270 INFO     root            Display format: "default"
+2018-07-11 20:42:18,273 INFO     ___FILE_ONLY___ availableMemoryMb
+2018-07-11 20:42:18,273 INFO     ___FILE_ONLY___ :
+2018-07-11 20:42:18,273 INFO     ___FILE_ONLY___  
+2018-07-11 20:42:18,273 INFO     ___FILE_ONLY___ 256
+2018-07-11 20:42:18,273 INFO     ___FILE_ONLY___ 
+
+2018-07-11 20:42:18,274 INFO     ___FILE_ONLY___ entryPoint
+2018-07-11 20:42:18,274 INFO     ___FILE_ONLY___ :
+2018-07-11 20:42:18,274 INFO     ___FILE_ONLY___  
+2018-07-11 20:42:18,274 INFO     ___FILE_ONLY___ helloGET
+2018-07-11 20:42:18,274 INFO     ___FILE_ONLY___ 
+
+2018-07-11 20:42:18,274 INFO     ___FILE_ONLY___ httpsTrigger
+2018-07-11 20:42:18,274 INFO     ___FILE_ONLY___ :
+2018-07-11 20:42:18,275 INFO     ___FILE_ONLY___ 
+
+2018-07-11 20:42:18,275 INFO     ___FILE_ONLY___   
+2018-07-11 20:42:18,275 INFO     ___FILE_ONLY___ url
+2018-07-11 20:42:18,275 INFO     ___FILE_ONLY___ :
+2018-07-11 20:42:18,275 INFO     ___FILE_ONLY___  
+2018-07-11 20:42:18,275 INFO     ___FILE_ONLY___ https://us-central1-darimana-209913.cloudfunctions.net/helloGET
+2018-07-11 20:42:18,276 INFO     ___FILE_ONLY___ 
+
+2018-07-11 20:42:18,276 INFO     ___FILE_ONLY___ labels
+2018-07-11 20:42:18,276 INFO     ___FILE_ONLY___ :
+2018-07-11 20:42:18,276 INFO     ___FILE_ONLY___ 
+
+2018-07-11 20:42:18,276 INFO     ___FILE_ONLY___   
+2018-07-11 20:42:18,276 INFO     ___FILE_ONLY___ deployment-tool
+2018-07-11 20:42:18,276 INFO     ___FILE_ONLY___ :
+2018-07-11 20:42:18,277 INFO     ___FILE_ONLY___  
+2018-07-11 20:42:18,277 INFO     ___FILE_ONLY___ cli-gcloud
+2018-07-11 20:42:18,277 INFO     ___FILE_ONLY___ 
+
+2018-07-11 20:42:18,278 INFO     ___FILE_ONLY___ name
+2018-07-11 20:42:18,278 INFO     ___FILE_ONLY___ :
+2018-07-11 20:42:18,278 INFO     ___FILE_ONLY___  
+2018-07-11 20:42:18,278 INFO     ___FILE_ONLY___ projects/darimana-209913/locations/us-central1/functions/helloGET
+2018-07-11 20:42:18,278 INFO     ___FILE_ONLY___ 
+
+2018-07-11 20:42:18,278 INFO     ___FILE_ONLY___ runtime
+2018-07-11 20:42:18,278 INFO     ___FILE_ONLY___ :
+2018-07-11 20:42:18,279 INFO     ___FILE_ONLY___  
+2018-07-11 20:42:18,279 INFO     ___FILE_ONLY___ nodejs6
+2018-07-11 20:42:18,279 INFO     ___FILE_ONLY___ 
+
+2018-07-11 20:42:18,279 INFO     ___FILE_ONLY___ serviceAccountEmail
+2018-07-11 20:42:18,279 INFO     ___FILE_ONLY___ :
+2018-07-11 20:42:18,279 INFO     ___FILE_ONLY___  
+2018-07-11 20:42:18,279 INFO     ___FILE_ONLY___ darimana-209913@appspot.gserviceaccount.com
+2018-07-11 20:42:18,279 INFO     ___FILE_ONLY___ 
+
+2018-07-11 20:42:18,279 INFO     ___FILE_ONLY___ sourceUploadUrl
+2018-07-11 20:42:18,280 INFO     ___FILE_ONLY___ :
+2018-07-11 20:42:18,280 INFO     ___FILE_ONLY___  
+2018-07-11 20:42:18,281 INFO     ___FILE_ONLY___ https://storage.googleapis.com/gcf-upload-us-central1-8b02da0f-f4b4-4724-8da3-f462269bc537/ea64a1ef-f781-4d24-a0e1-d4879fb01755.zip?GoogleAccessId=service-523453261058@gcf-admin-robot.iam.gserviceaccount.com&Expires=1531318292&Signature=LyhWSCfJglJbTzy6Rgyn0hM3kRyAHdYVC2xu%2Fw7bjl%2BE7MT%2BYoGaxJ0IiAuTw7%2Fp0xBjYhPfAr4ysmEq9br4S6FH9sZgNv4t8I66oALSXw%2FatKfKSQP36to488fceoBECLQNniF9YxTPNxwMd4640s2%2FzXsVP%2FqkvWmAV%2B9XdEQ%2BP1DmTau%2BZKIkPyS%2Fv%2FbxkPEg1AZgrx4Xhfr52u4uzKqIKlCJM9C1RN2sdCHbEM%2B%2FFZ8vy678YXtvshUful%2Fw7iGWq0DHsJymH6gHBwsrAhGH%2F%2FGfCgr9O2zvWtmHR%2BymqZfNKshwqg5lrRdTfnZn8ISMpU%2BvVdYmlViFo8kmyw%3D%3D
+2018-07-11 20:42:18,281 INFO     ___FILE_ONLY___ 
+
+2018-07-11 20:42:18,281 INFO     ___FILE_ONLY___ status
+2018-07-11 20:42:18,281 INFO     ___FILE_ONLY___ :
+2018-07-11 20:42:18,281 INFO     ___FILE_ONLY___  
+2018-07-11 20:42:18,281 INFO     ___FILE_ONLY___ ACTIVE
+2018-07-11 20:42:18,281 INFO     ___FILE_ONLY___ 
+
+2018-07-11 20:42:18,282 INFO     ___FILE_ONLY___ timeout
+2018-07-11 20:42:18,283 INFO     ___FILE_ONLY___ :
+2018-07-11 20:42:18,283 INFO     ___FILE_ONLY___  
+2018-07-11 20:42:18,283 INFO     ___FILE_ONLY___ 60s
+2018-07-11 20:42:18,283 INFO     ___FILE_ONLY___ 
+
+2018-07-11 20:42:18,283 INFO     ___FILE_ONLY___ updateTime
+2018-07-11 20:42:18,283 INFO     ___FILE_ONLY___ :
+2018-07-11 20:42:18,283 INFO     ___FILE_ONLY___  '
+2018-07-11 20:42:18,284 INFO     ___FILE_ONLY___ 2018-07-11T13:41:56Z
+2018-07-11 20:42:18,284 INFO     ___FILE_ONLY___ '
+2018-07-11 20:42:18,284 INFO     ___FILE_ONLY___ 
+
+2018-07-11 20:42:18,284 INFO     ___FILE_ONLY___ versionId
+2018-07-11 20:42:18,284 INFO     ___FILE_ONLY___ :
+2018-07-11 20:42:18,284 INFO     ___FILE_ONLY___  '
+2018-07-11 20:42:18,284 INFO     ___FILE_ONLY___ 1
+2018-07-11 20:42:18,284 INFO     ___FILE_ONLY___ '
+2018-07-11 20:42:18,285 INFO     ___FILE_ONLY___ 
+
