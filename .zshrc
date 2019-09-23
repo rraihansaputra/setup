@@ -28,14 +28,27 @@ export ZSH="$ANTIBODY_HOME"/https-COLON--SLASH--SLASH-github.com-SLASH-robbyruss
 DISABLE_AUTO_UPDATE="true"
 
 # load antibody dynamically
+# TODO change antibody to load from setup dir.
 source <(antibody init)
 # load antibody plugins from .zsh_plugins.txt
 # this only loads when .zsh_plugins exist on source command dir
 # need to link it somehow..
-antibody bundle < .zsh_plugins.txt
+antibody bundle < ~/.zsh_plugins.txt
 
 # avoid language woes
 export LANG=en_US.UTF-8
+
+# android dev vars
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home"
+export ANDROID_HOME="/Users/rs/Library/Android/sdk"
+#export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/28.0.3
+
+# default openssh to brew
+export LDFLAGS="-I/usr/local/opt/openssl@1.1/include -L/usr/local/opt/openssl@1.1/lib"
+
+# add brew openssh to PATH
+export OPENSSL_PATH="/usr/local/opt/openssl@1.1/bin"
+export PATH=$OPENSSL_PATH:$PATH
 
 # personal aliases
 alias code=vscodium
