@@ -1,9 +1,15 @@
+function git_commit_message() {
+    COMMIT_MSG=$(git log -1 --oneline 2> /dev/null)
+    echo "$COMMIT_MSG"
+}
+
 if [ "$USER" = "root" ]; then CARETCOLOR="red"; else CARETCOLOR="green"; fi
 
 local return_code="%(?..%{$fg_bold[red]%}:( %?%{$reset_color%})"
 
 PROMPT='
 %{$fg[cyan]%}%n%{$reset_color%}%{$fg[yellow]%}@%{$reset_color%}%{$fg[blue]%}%m%{$reset_color%}:%{${fg[green]}%}%~%{$reset_color%}$(git_prompt_info)
+%{$fg[yellow]%}$(git_commit_message)
 %{${fg[$CARETCOLOR]}%}%# %{${reset_color}%}'
 
 RPS1='${return_code} %D - %*'
