@@ -1,0 +1,152 @@
+    9  2019-05-02 15:09  brew install antibody
+   10  2019-05-02 15:09  brew install exa fzf
+   11  2019-05-02 15:09  brew bundle --file setup/Brewfile
+   15  2019-05-02 15:09  brew bundle --file setup/Brewfile
+   20  2019-05-02 15:09  brew bundle
+   25  2019-05-02 15:09  brew bundle
+   26  2019-05-02 15:09  brew bundle -v
+   27  2019-05-02 15:09  brew cask install java; brew install gradle
+   28  2019-05-02 15:09  brew cask install alfred android-file-transfer caffeine coconutbattery disk-inventory-x divvy dupeguru firefox flux flycut google-chrome handbrake handbrakebatch iterm2 karabiner-elements mounty notion postman avibrazil-rdm rescuetime slimbatterymonitor steam steamcmd textexpander textmate transmission transmission-remote-gui visual-studio-code vscodium vlc vlc-webplugin vlcstreamer
+   29  2019-05-02 15:09  brew install getantibody/tap/antibody
+   73  2019-05-02 15:09  brew install thefuck
+   78  2019-05-02 15:09  brew cask install spotify
+   96  2019-05-02 15:09  brew bundle dump
+   97  2019-05-02 15:09  brew bundle dump --force
+  189  2019-04-05 18:28  brew cask install nosleep
+  191  2019-04-06 06:47  brew cask install android-studio
+  211  2019-04-06 08:08  brew tap caskroom versions
+  212  2019-04-06 08:08  brew tap caskroom/versions
+  213  2019-04-06 08:09  brew install java8
+  214  2019-04-06 08:09  brew cask install java8
+  215  2019-04-06 08:09  brew untap caskroom/versions
+  216  2019-04-06 08:09  brew cask install java8
+  217  2019-04-06 08:10  brew cask reinstall java8
+  387  2019-04-08 11:55  brew cask install android-sdk
+  393  2019-04-08 13:08  brew tap mas-cli/tap
+  394  2019-04-08 13:09  brew tap-pin mas-cli/tap
+  395  2019-04-08 13:09  brew install mas
+  608  2019-04-11 12:38  brew install ffmpeg && brew cask install x-quartz
+  609  2019-04-11 13:15  brew cask install xquartz
+ 1208  2019-05-02 18:10  brew install sed
+ 1214  2019-05-02 18:11  brew install gnu-sed
+ 1478  2019-05-04 16:01  brew update && brew upgrade
+ 1759  2019-05-08 16:20  brew update && brew upgrade
+ 1760  2019-05-08 16:21  brew cask install station
+ 1761  2019-05-08 16:21  brew cask install station blisk
+ 1762  2019-05-08 16:23  brew install notion
+ 1763  2019-05-08 16:24  brew cask install notion
+ 1764  2019-05-08 18:39  brew cask install blisk
+ 1765  2019-05-08 20:53  brew cask install franz
+ 1882  2019-05-13 13:41  brew cask install todoist
+ 1928  2019-05-17 14:29  brew cask install sequel
+ 1929  2019-05-17 14:30  brew cask install sequel-pro
+ 1930  2019-05-17 14:50  brew cask install robo3t
+ 1931  2019-05-17 14:50  brew cask install robo-3t
+ 2047  2019-05-20 10:54  brew update && brew upgrade
+ 2050  2019-05-20 11:14  brew update && brew upgrade
+ 2194  2019-05-27 16:32  brew cask install dynalist
+ 2228  2019-05-31 13:49  brew cask install disablemonitor
+ 2293  2019-06-27 15:56  brew install mitmproxy
+ 2335  2019-06-28 13:16  brew cask install vscode-insiders
+ 2536  2019-07-08 11:14  brew update && brew upgrade
+ 2941  2019-07-17 15:02  brew search postgre
+ 2942  2019-07-17 15:02  brew install postrgesql
+ 2943  2019-07-17 15:04  brew install postgresql
+ 2998  2019-07-17 15:29  brew install sqlite3
+ 3045  2019-07-22 15:06  brew cask install vscode
+ 3046  2019-07-22 16:35  brew cask install visual-studio-code
+ 3047  2019-07-22 16:36  brew cask reinstall visual-studio-code
+ 3249  2019-08-15 09:13  brew cask install unarchiver
+ 3250  2019-08-16 11:20  brew cask install the-unarchiver
+ 3253  2019-08-16 11:23  brew cask install the-unarchiver
+ 3328  2019-08-16 13:36  brew update
+ 3333  2019-08-16 14:07  brew upgrade
+ 3334  2019-08-16 14:09  brew upgrade youtube-dl
+ 3423  2019-08-20 18:40  brew list
+ 3424  2019-08-20 18:40  brew man postgresql
+ 3425  2019-08-20 18:40  brew help
+ 3426  2019-08-20 18:41  brew info postgresql
+ 3427  2019-08-20 18:41  brew services start postgresql
+ 3599  2019-09-16 07:30  brew search dnscrypt
+ 3600  2019-09-16 07:30  brew install dnscrypt-proxy
+ 3602  2019-09-16 07:33  sudo brew services start dnscrypt-proxy
+ 3661  2019-09-16 18:48  pg_ctl -D /usr/local/var/postgres start && brew services start postgresql
+ 4150  2019-09-23 16:46  brew update openssl
+ 4151  2019-09-23 16:47  brew upgrade openssl
+ 4156  2019-09-23 16:49  brew upgrade openssl -v
+ 4157  2019-09-23 16:50  brew install openssl@1.1
+ 4158  2019-09-23 16:51  brew install --debug openssl@1.1
+ 4170  2019-09-23 16:59  brew uninstall --debug python3 && brew install --debug python3
+ 4171  2019-09-23 17:00  brew uninstall --debug --ignore-dependencies python3 && brew install --debug python3
+ 4173  2019-09-23 17:02  brew install --debug python3
+ 4178  2019-09-23 17:16  brew install pipenv
+ 4179  2019-09-23 17:16  brew list
+ 4185  2019-09-23 17:18  brew uninstall pipenv && brew install pipenv
+ 4186  2019-09-23 17:19  brew uninstall --debug pipenv
+ 4187  2019-09-23 17:19  brew install --debug pipenv
+ 4341  2019-09-25 22:16  brew info dnscrypt-proxy
+ 4401  2019-09-26 21:00  brew info dnscrypt-proxy
+ 4402  2019-09-26 21:00  sudo brew services restart dnscrypt-proxy
+ 4510  2019-09-29 15:15  brew search heroku
+ 4511  2019-09-29 15:15  brew tap heroku/brew && brew install heroku
+ 4753  2019-10-07 15:04  brew
+ 4960  2019-10-10 17:44  brew search docker
+ 4961  2019-10-10 17:47  brew install docker
+ 4962  2019-10-10 17:49  brew cask install docker
+ 5018  2019-10-10 21:59  brew cask outdated
+ 5019  2019-10-10 21:59  brew cask upgrade vscodium
+ 5020  2019-10-10 21:59  brew cask list
+ 5021  2019-10-10 21:59  brew cask uninstall visual-studio-code
+ 5022  2019-10-10 22:00  brew cask upgrade vscodium
+ 5706  2019-10-18 06:09  brew info dnscrypt-proxy
+ 6120  2019-11-08 15:46  brew install stripe/stripe-cli/stripe
+ 6286  2019-11-18 18:34  brew search composer
+ 6287  2019-11-18 18:35  brew install composer
+ 6302  2019-11-18 18:51  brew search php
+ 6303  2019-11-18 18:52  brew install php@7.2
+ 7836  2019-12-17 11:14  brew upgrade mas
+ 7837  2019-12-17 11:14  brew search mas
+ 7838  2019-12-17 11:15  brew upgrade
+ 7839  2019-12-17 11:15  brew upgrade --help
+ 7840  2019-12-17 11:15  brew upgrade -v  mas
+ 7841  2019-12-17 11:15  brew --help
+ 7842  2019-12-17 11:15  brew info mas
+ 7843  2019-12-17 11:17  brew upgrade -v mas-cli/tap/mas
+ 7848  2019-12-17 11:18  brew cask search margin
+ 7849  2019-12-17 11:18  brew search margin
+ 7850  2019-12-17 11:19  brew info marginnote
+ 7851  2019-12-17 11:19  brew cask install marginnote
+ 7928  2019-12-19 06:58  brew info dnscrypt
+ 7929  2019-12-19 06:58  brew list
+ 7930  2019-12-19 06:59  brew info dnscrypt-proxy
+ 7953  2019-12-19 16:01  brew install yarn
+ 8098  2019-12-21 14:15  brew cask search maccy
+ 8099  2019-12-21 14:15  brew search maccy
+ 8100  2019-12-21 14:15  brew cask install maccy
+ 8101  2019-12-21 17:23  brew search istat
+ 8102  2019-12-21 17:24  brew cask install istat-menus
+ 8112  2019-12-21 18:00  brew cask install istat-menus
+ 8113  2019-12-21 18:00  brew cask search dozer
+ 8114  2019-12-21 18:00  brew search dozer
+ 8115  2019-12-21 18:00  brew cask install dozer
+ 8116  2019-12-21 18:01  brew cask install dozer istat-menus
+ 8119  2019-12-23 09:11  brew cask install dozer istat-menus
+ 8120  2019-12-23 09:24  brew search menu
+ 8121  2019-12-23 09:24  brew search menumeters
+ 8122  2019-12-23 09:25  brew info menubar-stats
+ 8123  2019-12-23 09:25  brew search hacker-emnu
+ 8124  2019-12-23 09:25  brew search hacker-menu
+ 8125  2019-12-23 09:31  brew cask install menumeters
+ 8126  2019-12-23 09:38  brew info menumeters
+ 8143  2019-12-25 12:46  brew search ipython
+ 8277  2020-01-07 22:02  brew search vscode
+ 8278  2020-01-07 22:03  brew install vscode
+ 8279* 2020-01-07 22:04  brew cask install vscode-insiders
+ 8280* 2020-01-07 22:05  brew cask install visual-studio-code-insiders
+ 8281  2020-01-07 22:05  history | grep brew | less
+ 8282* 2020-01-07 22:06  brew bundle
+ 8283* 2020-01-07 22:06  brew bundle man
+ 8284* 2020-01-07 22:06  brew bundle --help
+ 8285* 2020-01-07 22:09  brew bundle dump
+ 8287* 2020-01-07 22:09  brew bundle dump --file Brewfile.test
+ 8289* 2020-01-07 22:10  brew bundle dump --force --file Brewfile.test

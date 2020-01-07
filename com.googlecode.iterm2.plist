@@ -285,11 +285,13 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>1169 110 445 103 0 0 1680 1027 </string>
+	<string>1229 1349 445 77 -119 1050 1920 1178 </string>
+	<key>NSWindow Frame SessionsPreferences</key>
+	<string>269 136 599 459 0 0 1680 1027 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>571 182 918 423 0 0 1680 1027 </string>
+	<string>-56 -1394 918 423 -1285 -1600 2560 1578 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>500 300 665 427 0 0 1680 1028 </string>
+	<string>850 300 650 427 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>132 1172 665 427 -126 1050 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1070,6 +1072,10 @@
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>E19F261D-2446-4008-94C2-C404F2376BBA</string>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
+	<true/>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
+	<integer>0</integer>
 	<key>NoSyncPermissionToShowTip</key>
 	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
@@ -1123,8 +1129,16 @@
 	<false/>
 	<key>SmartPlacement</key>
 	<true/>
+	<key>ToolbeltTools</key>
+	<array>
+		<string>Captured Output</string>
+		<string>Paste History</string>
+		<string>Jobs</string>
+	</array>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>iTerm Version</key>
 	<string>3.2.8</string>
 </dict>

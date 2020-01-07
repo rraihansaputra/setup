@@ -51,4 +51,5 @@ export OPENSSL_PATH="/usr/local/opt/openssl@1.1/bin"
 export PATH=$OPENSSL_PATH:$PATH
 
 # personal aliases
+alias vsc=/usr/local/bin/code
 alias code=vscodium
