@@ -1,5 +1,9 @@
-call plug#begin('~/.vim/plugged')
-
+" automatically download vim-plug if not available
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 " Vim Plug
 call plug#begin('~/.vim/plugged')
 
@@ -29,7 +33,7 @@ Plug 'vim-syntastic/syntastic'
 call plug#end()
 
 " Initialize plugin system
-call plug#end()
+" call plug#end()
 
 " Packages
 if executable('rg')
