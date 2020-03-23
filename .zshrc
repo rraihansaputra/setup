@@ -64,4 +64,4 @@ export PATH=$OPENSSL_PATH:$PATH
 
 # personal aliases
 alias vsc=/usr/local/bin/code
-alias code=vscodium
+alias code=codium
