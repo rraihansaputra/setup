@@ -39,11 +39,11 @@ antibody bundle < ~/.zsh_plugins.txt
 export LANG=en_US.UTF-8
 
 # java version configs
-# export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
+export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
 export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
 # export JAVA_12_HOME=$(/usr/libexec/java_home -v12)
 
-# alias java8='export JAVA_HOME=$JAVA_8_HOME'
+alias java8='export JAVA_HOME=$JAVA_8_HOME'
 alias java11='export JAVA_HOME=$JAVA_11_HOME'
 # alias java12='export JAVA_HOME=$JAVA_12_HOME'
 
@@ -65,3 +65,8 @@ export PATH=$OPENSSL_PATH:$PATH
 # personal aliases
 alias vsc=/usr/local/bin/code
 alias code=codium
+
+# init rbenv
+eval "$(rbenv init -)"
+
+alias glb="git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oE '[^ ]+ ~ .*' | awk -F~ '!seen[$1]++' | head -n 10 | awk -F' ~ HEAD@{' '{printf(\"  \\033[33m%s: \\033[37m %s\\033[0m\\n\", substr($2, 1, length($2)-1), $1)}'"

@@ -4,6 +4,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
+
 " Vim Plug
 call plug#begin('~/.vim/plugged')
 
@@ -15,15 +16,17 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ctrlpvim/ctrlp.vim', { 'on': 'CtrlP' }
 
 " Color Schemes
-Plug 'flazz/vim-colorschemes'
+" Plug 'flazz/vim-colorschemes'
 
 " NERDTree
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
 " NERD Commenter
 Plug 'scrooloose/nerdcommenter'
+
 " vim-ripgrep
 Plug 'jremmen/vim-ripgrep'
+
 " Surround
 Plug 'tpope/vim-surround'
 
@@ -31,9 +34,6 @@ Plug 'tpope/vim-surround'
 Plug 'vim-syntastic/syntastic'
 
 call plug#end()
-
-" Initialize plugin system
-" call plug#end()
 
 " Packages
 if executable('rg')
@@ -45,5 +45,8 @@ let g:ctrlp_custom_ignore = {
  \ 'dir': '\.git$\|\.yardoc\|bower_components|node_modules|public$|log\|tmp$',
  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
  \ }
+
+" highlight Comment cterm=italic
+
 " Key Commands
 map <C-\> :NERDTreeToggle<CR>
