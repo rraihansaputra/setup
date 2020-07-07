@@ -63,8 +63,8 @@ export OPENSSL_PATH="/usr/local/opt/openssl@1.1/bin"
 export PATH=$OPENSSL_PATH:$PATH
 
 # personal aliases
-alias vsc=/usr/local/bin/code
-alias code=codium
+# alias vsc=/usr/local/bin/vsc
+# alias code=/usr/local/bin/code
 
 # init rbenv
 eval "$(rbenv init -)"

@@ -32,3 +32,7 @@ chsh -s /usr/local/bin/zsh
 **Setup VSCodium with Settings Sync!!**
 **Change iTerm2 to load settings from the ~/setup folder**
 
+**vscodium cask and visual-studio-code cask cannot be installed at the same time for now**
+
+VSCodium Extension Marketplace Adjustment:
+https://github.com/VSCodium/vscodium/blob/master/DOCS.md#extensions--marketplace
