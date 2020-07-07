@@ -289,7 +289,7 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1000 300 650 427 0 0 2560 1057 </string>
+	<string>732 754 880 702 0 0 2560 1577 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1088,15 +1088,17 @@
 	<key>NoSyncInstallationId</key>
 	<string>88EB782A-EE55-4E47-9ADB-D3541540FC47</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>4</integer>
+	<integer>62</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
-	<real>606662474.34239805</real>
+	<real>606831992.80895805</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
 	<true/>
+	<key>NoSyncPermissionToShowTip</key>
+	<false/>
 	<key>NoSyncRecordedVariables</key>
 	<dict>
 		<key>0</key>
@@ -1805,6 +1807,32 @@
 	</dict>
 	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
 	<real>606489674.34205604</real>
+	<key>NoSyncToolbeltProportions</key>
+	<dict>
+		<key>proportions</key>
+		<array>
+			<dict>
+				<key>heightAsFraction</key>
+				<real>0.43920595533498757</real>
+				<key>name</key>
+				<string>Captured Output</string>
+			</dict>
+			<dict>
+				<key>heightAsFraction</key>
+				<real>0.22580645161290322</real>
+				<key>name</key>
+				<string>Paste History</string>
+			</dict>
+			<dict>
+				<key>heightAsFraction</key>
+				<real>0.33498759305210918</real>
+				<key>name</key>
+				<string>Jobs</string>
+			</dict>
+		</array>
+	</dict>
+	<key>PasteTabToStringTabStopSize</key>
+	<integer>4</integer>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -1858,9 +1886,7 @@
 	<false/>
 	<key>ToolbeltTools</key>
 	<array>
-		<string>Captured Output</string>
 		<string>Paste History</string>
-		<string>Jobs</string>
 	</array>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
