@@ -23,7 +23,7 @@ robbyrussell/oh-my-zsh path:plugins/tmux
 # uncomment for local theme dev
 # somehow the bold is gone if i use local
 # might be something with not using the OMZ path
-/Users/rs/setup/zsh-plugins/re5et-rs.zsh-theme
+# /Users/rs/setup/zsh-plugins/re5et-rs.zsh-theme
 
 # my modified theme on github
 #rraihansaputra/setup path:/zsh-plugins/re5et-rs.zsh-theme

@@ -35,6 +35,10 @@ source <(antibody init)
 # need to link it somehow..
 antibody bundle < ~/.zsh_plugins.txt
 
+# load pure
+antibody bundle mafredri/zsh-async
+antibody bundle sindresorhus/pure
+
 # avoid language woes
 export LANG=en_US.UTF-8
 
