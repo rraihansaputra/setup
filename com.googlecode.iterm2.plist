@@ -289,7 +289,7 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>732 754 880 702 0 0 2560 1577 </string>
+	<string>1691 269 650 929 0 0 2560 1577 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1088,7 +1088,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>88EB782A-EE55-4E47-9ADB-D3541540FC47</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>62</integer>
+	<integer>82</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1831,6 +1831,8 @@
 			</dict>
 		</array>
 	</dict>
+	<key>PMPrintingExpandedStateForPrint2</key>
+	<false/>
 	<key>PasteTabToStringTabStopSize</key>
 	<integer>4</integer>
 	<key>PointerActions</key>
@@ -1868,6 +1870,8 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/rs/setup</string>
+	<key>Print In Black And White</key>
+	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<false/>
 	<key>SUFeedAlternateAppNameKey</key>
