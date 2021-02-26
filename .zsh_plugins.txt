@@ -20,6 +20,9 @@ robbyrussell/oh-my-zsh path:plugins/osx
 robbyrussell/oh-my-zsh path:plugins/thefuck
 robbyrussell/oh-my-zsh path:plugins/tmux
 
+# zsh-z
+agkozak/zsh-z
+
 # uncomment for local theme dev
 # somehow the bold is gone if i use local
 # might be something with not using the OMZ path
