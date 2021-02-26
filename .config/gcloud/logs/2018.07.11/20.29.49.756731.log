@@ -1,9 +1,0 @@
-2018-07-11 20:29:49,762 DEBUG    root            Loaded Command Group: [u'gcloud', u'components']
-2018-07-11 20:29:49,767 DEBUG    root            Loaded Command Group: [u'gcloud', u'components', u'update']
-2018-07-11 20:29:49,771 DEBUG    root            Running [gcloud.components.update] with arguments: []
-2018-07-11 20:29:51,310 INFO     ___FILE_ONLY___ 
-
-2018-07-11 20:29:51,310 INFO     ___FILE_ONLY___ All components are up to date.
-
-2018-07-11 20:29:51,311 DEBUG    root            Updating notification cache...
-2018-07-11 20:29:51,312 INFO     root            Display format: "none"

@@ -1,4 +1,8 @@
 [core]
-account = theduckempire@gmail.com
-project = darimana-209913
+account = raihan@wartek.belajar.id
+project = wartek-staging
+
+[compute]
+zone = asia-southeast2-a
+region = asia-southeast2
 

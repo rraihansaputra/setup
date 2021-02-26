@@ -1,0 +1,149 @@
+2021-02-19 14:08:26,927 DEBUG    root            Loaded Command Group: ['gcloud', 'init']
+2021-02-19 14:08:26,929 DEBUG    root            Running [gcloud.init] with arguments: []
+2021-02-19 14:08:26,929 INFO     ___FILE_ONLY___ Welcome! This command will take you through the configuration of gcloud.
+
+
+2021-02-19 14:08:26,930 INFO     ___FILE_ONLY___ Settings from your current configuration [default] are:
+
+2021-02-19 14:08:26,934 INFO     ___FILE_ONLY___ core:
+  account: theduckempire@gmail.com
+  disable_usage_reporting: 'True'
+  project: darimana-209913
+
+2021-02-19 14:08:26,934 INFO     ___FILE_ONLY___ 
+
+2021-02-19 14:08:39,046 INFO     ___FILE_ONLY___ Your current configuration has been set to: [default]
+
+
+2021-02-19 14:08:39,046 INFO     ___FILE_ONLY___ You can skip diagnostics next time by using the following flag:
+
+2021-02-19 14:08:39,047 INFO     ___FILE_ONLY___   gcloud init --skip-diagnostics
+
+
+2021-02-19 14:08:39,047 INFO     ___FILE_ONLY___ Network diagnostic detects and fixes local network connection issues.
+
+2021-02-19 14:08:39,048 INFO     ___FILE_ONLY___ Checking network connection...
+2021-02-19 14:08:41,316 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): accounts.google.com:443
+2021-02-19 14:08:41,463 DEBUG    urllib3.connectionpool https://accounts.google.com:443 "GET / HTTP/1.1" 302 338
+2021-02-19 14:08:41,922 DEBUG    urllib3.connectionpool https://accounts.google.com:443 "GET /ServiceLogin?passive=1209600&continue=https%3A%2F%2Faccounts.google.com%2F&followup=https%3A%2F%2Faccounts.google.com%2F HTTP/1.1" 200 None
+2021-02-19 14:08:42,004 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): cloudresourcemanager.googleapis.com:443
+2021-02-19 14:08:43,104 DEBUG    urllib3.connectionpool https://cloudresourcemanager.googleapis.com:443 "GET /v1beta1/projects HTTP/1.1" 401 None
+2021-02-19 14:08:43,107 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): www.googleapis.com:443
+2021-02-19 14:08:43,490 DEBUG    urllib3.connectionpool https://www.googleapis.com:443 "GET /auth/cloud-platform HTTP/1.1" 200 None
+2021-02-19 14:08:43,495 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): dl.google.com:443
+2021-02-19 14:08:43,625 DEBUG    urllib3.connectionpool https://dl.google.com:443 "GET /dl/cloudsdk/channels/rapid/components-2.json HTTP/1.1" 200 148682
+2021-02-19 14:08:43,714 INFO     ___FILE_ONLY___ Reachability Check passed.
+
+2021-02-19 14:08:43,714 INFO     ___FILE_ONLY___ Network diagnostic passed (1/1 checks passed).
+
+
+2021-02-19 14:08:54,131 DEBUG    root            Loaded Command Group: ['gcloud', 'auth']
+2021-02-19 14:08:54,306 DEBUG    root            Loaded Command Group: ['gcloud', 'auth', 'login']
+2021-02-19 14:08:54,308 INFO     root            Executing: [gcloud auth login --force --brief]
+2021-02-19 14:08:54,309 DEBUG    root            Running [gcloud.auth.login] with arguments: [--brief: "True", --force: "True"]
+2021-02-19 14:08:54,319 DEBUG    requests_oauthlib.oauth2_session Generated new state pnVCKxJpnJxDc2ZtsY2JO2gJuGfCNO.
+2021-02-19 14:08:54,552 INFO     ___FILE_ONLY___ Your browser has been opened to visit:
+
+    https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=32555940559.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Flocalhost%3A8085%2F&scope=openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fappengine.admin+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcompute+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Faccounts.reauth&state=pnVCKxJpnJxDc2ZtsY2JO2gJuGfCNO&access_type=offline&code_challenge=uX7vIm_pM8r7jA8jV4eOJX8uwCbJx0kh5AA1iwhCGyE&code_challenge_method=S256
+
+
+2021-02-19 14:09:00,423 INFO     google_auth_oauthlib.flow "GET /?state=pnVCKxJpnJxDc2ZtsY2JO2gJuGfCNO&code=4/0AY0e-g542svm16GKDGL9YoZwxwvj8Iz-Cm4Y9ja0mO-y9Suw7q5BPsxih9doqeScAt5WTg&scope=email%20openid%20https://www.googleapis.com/auth/userinfo.email%20https://www.googleapis.com/auth/cloud-platform%20https://www.googleapis.com/auth/appengine.admin%20https://www.googleapis.com/auth/compute%20https://www.googleapis.com/auth/accounts.reauth&authuser=0&hd=wartek.belajar.id&prompt=consent HTTP/1.1" 200 959
+2021-02-19 14:09:00,424 DEBUG    requests_oauthlib.oauth2_session Requesting url https://oauth2.googleapis.com/token using method POST.
+2021-02-19 14:09:00,424 DEBUG    requests_oauthlib.oauth2_session Supplying headers {b'Accept': b'application/json', b'Content-Type': b'application/x-www-form-urlencoded;charset=UTF-8', b'user-agent': b'google-cloud-sdk gcloud/328.0.0 command/gcloud.auth.login invocation-id/f12219e8163940858251f2194984fce2 environment/None environment-version/None interactive/True from-script/False python/3.8.2 term/xterm-256color (Macintosh; Intel Mac OS X 19.6.0)'} and data {'grant_type': 'authorization_code', 'client_id': '32555940559.apps.googleusercontent.com', 'client_secret': 'ZmssLNjJy2998hD4CTg2ejr2', 'code': '4/0AY0e-g542svm16GKDGL9YoZwxwvj8Iz-Cm4Y9ja0mO-y9Suw7q5BPsxih9doqeScAt5WTg', 'redirect_uri': 'http://localhost:8085/', 'code_verifier': 'Ppc6oiPRxqqhDCATO15iHCv8QB.Gm775Etke6VJT21lmQQ7bj4egRp-CO3ww2No3vMTF-xHRZ-pajAiOxoB_MgjHJ_VlSCw9NmMixsr8~NIUZKD8-koq3c6YMyqH2aIy'}
+2021-02-19 14:09:00,425 DEBUG    requests_oauthlib.oauth2_session Passing through key word arguments {'json': None, 'timeout': None, 'auth': None, 'verify': True, 'proxies': None}.
+2021-02-19 14:09:00,539 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2021-02-19 14:09:01,115 DEBUG    urllib3.connectionpool https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2021-02-19 14:09:01,115 DEBUG    requests_oauthlib.oauth2_session Prepared fetch token request body grant_type=authorization_code&client_id=32555940559.apps.googleusercontent.com&client_secret=ZmssLNjJy2998hD4CTg2ejr2&code=4%2F0AY0e-g542svm16GKDGL9YoZwxwvj8Iz-Cm4Y9ja0mO-y9Suw7q5BPsxih9doqeScAt5WTg&redirect_uri=http%3A%2F%2Flocalhost%3A8085%2F&code_verifier=Ppc6oiPRxqqhDCATO15iHCv8QB.Gm775Etke6VJT21lmQQ7bj4egRp-CO3ww2No3vMTF-xHRZ-pajAiOxoB_MgjHJ_VlSCw9NmMixsr8~NIUZKD8-koq3c6YMyqH2aIy
+2021-02-19 14:09:01,116 DEBUG    requests_oauthlib.oauth2_session Request to fetch token completed with status 200.
+2021-02-19 14:09:01,116 DEBUG    requests_oauthlib.oauth2_session Request headers were {'user-agent': b'google-cloud-sdk gcloud/328.0.0 command/gcloud.auth.login invocation-id/f12219e8163940858251f2194984fce2 environment/None environment-version/None interactive/True from-script/False python/3.8.2 term/xterm-256color (Macintosh; Intel Mac OS X 19.6.0)', 'Accept-Encoding': 'gzip, deflate', 'Accept': b'application/json', 'Connection': 'keep-alive', 'Content-Type': b'application/x-www-form-urlencoded;charset=UTF-8', 'Content-Length': '387'}
+2021-02-19 14:09:01,116 DEBUG    requests_oauthlib.oauth2_session Request body was grant_type=authorization_code&client_id=32555940559.apps.googleusercontent.com&client_secret=ZmssLNjJy2998hD4CTg2ejr2&code=4%2F0AY0e-g542svm16GKDGL9YoZwxwvj8Iz-Cm4Y9ja0mO-y9Suw7q5BPsxih9doqeScAt5WTg&redirect_uri=http%3A%2F%2Flocalhost%3A8085%2F&code_verifier=Ppc6oiPRxqqhDCATO15iHCv8QB.Gm775Etke6VJT21lmQQ7bj4egRp-CO3ww2No3vMTF-xHRZ-pajAiOxoB_MgjHJ_VlSCw9NmMixsr8~NIUZKD8-koq3c6YMyqH2aIy
+2021-02-19 14:09:01,116 DEBUG    requests_oauthlib.oauth2_session Response headers were {'Date': 'Fri, 19 Feb 2021 07:09:01 GMT', 'Expires': 'Mon, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Vary': 'Origin, X-Origin, Referer', 'Content-Encoding': 'gzip', 'Server': 'scaffolding on HTTPServer2', 'X-XSS-Protection': '0', 'X-Frame-Options': 'SAMEORIGIN', 'X-Content-Type-Options': 'nosniff', 'Alt-Svc': 'h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"', 'Transfer-Encoding': 'chunked'} and content {
+  "access_token": "ya29.A0AfH6SMCzvtkyi6vL0U7KH2S35XFuPnumJKfJziH2WJwY3gNJm4VnY4w6F82vEDHxsz6fHTHNdW3qOaKxQi1TIe5MqftFn482IKO8zBAakRhwXYRSpA5su7xL5VH22aMTDX2g5z6sqLJSOf441JCjYHacVBN8KCEkCC4j",
+  "expires_in": 3599,
+  "refresh_token": "1//0ga73p9ym1TqXCgYIARAAGBASNwF-L9IrTVydy_fMl59vPAz9G897iSOUkVvGaxQokbn8hDJn9Q-_9px1HznQzfy7tJVWG1N2SuU",
+  "scope": "openid https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/compute https://www.googleapis.com/auth/appengine.admin https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/accounts.reauth",
+  "token_type": "Bearer",
+  "id_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImZkYjQwZTJmOTM1M2M1OGFkZDY0OGI2MzYzNGU1YmJmNjNlNGY1MDIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIzMjU1NTk0MDU1OS5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsImF1ZCI6IjMyNTU1OTQwNTU5LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTExMTUzMzE3MTY5ODY4MDA5OTIyIiwiaGQiOiJ3YXJ0ZWsuYmVsYWphci5pZCIsImVtYWlsIjoicmFpaGFuQHdhcnRlay5iZWxhamFyLmlkIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF0X2hhc2giOiJXSDVpRzZCV25XdjF3WFNpaU0tYjV3IiwiaWF0IjoxNjEzNzE4NTQxLCJleHAiOjE2MTM3MjIxNDF9.X4cZKdj3PGVWlmUEb7KgkEYJ35f2RLbEou2NiQNVhQbhaBEbNpvhbCWnzGh67XgGCmCnj1SclHM64SrjAMpqHVCatOHOGNxvYsw_M-omGI5PU4MeFlZ0mr_mBPjwJtSVgxruZCh3MoRQofEhhcjWb-YVuLZqDbH8PggLdH2FuZCdLKF-R3IY5PMfl8YkxyPYjy22Ws3BCk8SUA9JtXEtXaQ2HAewjMpbVeO_kRyZAl3o2_O6t3RNF3LQ91OXAnZSuZXoIYVmnf_Cw2R8w1ZklcRBWfCRxgSBPDUf0tprlscwB85j0D5VWQthaEwVwoG3CoaKBPmzjA3EI_V_N01QZA"
+}.
+2021-02-19 14:09:01,116 DEBUG    requests_oauthlib.oauth2_session Invoking 0 token response hooks.
+2021-02-19 14:09:01,116 DEBUG    requests_oauthlib.oauth2_session Obtained token {'access_token': 'ya29.A0AfH6SMCzvtkyi6vL0U7KH2S35XFuPnumJKfJziH2WJwY3gNJm4VnY4w6F82vEDHxsz6fHTHNdW3qOaKxQi1TIe5MqftFn482IKO8zBAakRhwXYRSpA5su7xL5VH22aMTDX2g5z6sqLJSOf441JCjYHacVBN8KCEkCC4j', 'expires_in': 3599, 'refresh_token': '1//0ga73p9ym1TqXCgYIARAAGBASNwF-L9IrTVydy_fMl59vPAz9G897iSOUkVvGaxQokbn8hDJn9Q-_9px1HznQzfy7tJVWG1N2SuU', 'scope': ['openid', 'https://www.googleapis.com/auth/cloud-platform', 'https://www.googleapis.com/auth/compute', 'https://www.googleapis.com/auth/appengine.admin', 'https://www.googleapis.com/auth/userinfo.email', 'https://www.googleapis.com/auth/accounts.reauth'], 'token_type': 'Bearer', 'id_token': 'eyJhbGciOiJSUzI1NiIsImtpZCI6ImZkYjQwZTJmOTM1M2M1OGFkZDY0OGI2MzYzNGU1YmJmNjNlNGY1MDIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIzMjU1NTk0MDU1OS5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsImF1ZCI6IjMyNTU1OTQwNTU5LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTExMTUzMzE3MTY5ODY4MDA5OTIyIiwiaGQiOiJ3YXJ0ZWsuYmVsYWphci5pZCIsImVtYWlsIjoicmFpaGFuQHdhcnRlay5iZWxhamFyLmlkIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF0X2hhc2giOiJXSDVpRzZCV25XdjF3WFNpaU0tYjV3IiwiaWF0IjoxNjEzNzE4NTQxLCJleHAiOjE2MTM3MjIxNDF9.X4cZKdj3PGVWlmUEb7KgkEYJ35f2RLbEou2NiQNVhQbhaBEbNpvhbCWnzGh67XgGCmCnj1SclHM64SrjAMpqHVCatOHOGNxvYsw_M-omGI5PU4MeFlZ0mr_mBPjwJtSVgxruZCh3MoRQofEhhcjWb-YVuLZqDbH8PggLdH2FuZCdLKF-R3IY5PMfl8YkxyPYjy22Ws3BCk8SUA9JtXEtXaQ2HAewjMpbVeO_kRyZAl3o2_O6t3RNF3LQ91OXAnZSuZXoIYVmnf_Cw2R8w1ZklcRBWfCRxgSBPDUf0tprlscwB85j0D5VWQthaEwVwoG3CoaKBPmzjA3EI_V_N01QZA', 'expires_at': 1613722140.1168299}.
+2021-02-19 14:09:01,128 INFO     root            Display format: "none"
+2021-02-19 14:09:01,308 INFO     ___FILE_ONLY___ You are logged in as: [raihan@wartek.belajar.id].
+
+
+2021-02-19 14:09:01,338 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): cloudresourcemanager.googleapis.com:443
+2021-02-19 14:09:02,584 DEBUG    urllib3.connectionpool https://cloudresourcemanager.googleapis.com:443 "GET /v1/projects?alt=json&filter=lifecycleState%3AACTIVE&pageSize=201 HTTP/1.1" 200 None
+2021-02-19 14:09:24,596 INFO     ___FILE_ONLY___ Your current project has been set to: [wartek-staging].
+
+
+2021-02-19 14:09:24,638 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2021-02-19 14:09:24,643 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'project_info']
+2021-02-19 14:09:24,653 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'project-info', 'describe']
+2021-02-19 14:09:24,654 INFO     root            Executing: [gcloud compute project-info describe --quiet]
+2021-02-19 14:09:24,657 DEBUG    root            Running [gcloud.compute.project-info.describe] with arguments: [--no-user-output-enabled: "false", --quiet: "True", --verbosity: "none"]
+2021-02-19 14:09:25,099 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2021-02-19 14:09:26,192 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "POST /batch/compute/v1 HTTP/1.1" 200 None
+2021-02-19 14:09:26,199 INFO     root            Display disabled.
+2021-02-19 14:09:26,206 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'zones']
+2021-02-19 14:09:26,213 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'zones', 'describe']
+2021-02-19 14:09:26,214 INFO     root            Executing: [gcloud compute zones describe asia-southeast2-a]
+2021-02-19 14:09:26,216 DEBUG    root            Running [gcloud.compute.zones.describe] with arguments: [--no-user-output-enabled: "false", --verbosity: "none", NAME: "asia-southeast2-a"]
+2021-02-19 14:09:26,232 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2021-02-19 14:09:27,175 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "POST /batch/compute/v1 HTTP/1.1" 200 None
+2021-02-19 14:09:27,178 INFO     root            Display disabled.
+2021-02-19 14:09:27,181 INFO     ___FILE_ONLY___ Your project default Compute Engine zone has been set to [asia-southeast2-a].
+You can change it by running [gcloud config set compute/zone NAME].
+
+
+2021-02-19 14:09:27,183 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'regions']
+2021-02-19 14:09:27,188 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'regions', 'describe']
+2021-02-19 14:09:27,189 INFO     root            Executing: [gcloud compute regions describe asia-southeast2]
+2021-02-19 14:09:27,191 DEBUG    root            Running [gcloud.compute.regions.describe] with arguments: [--no-user-output-enabled: "false", --verbosity: "none", NAME: "asia-southeast2"]
+2021-02-19 14:09:27,204 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2021-02-19 14:09:28,408 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "POST /batch/compute/v1 HTTP/1.1" 200 None
+2021-02-19 14:09:28,416 INFO     root            Display disabled.
+2021-02-19 14:09:28,423 INFO     ___FILE_ONLY___ Your project default Compute Engine region has been set to [asia-southeast2].
+You can change it by running [gcloud config set compute/region NAME].
+
+
+2021-02-19 14:09:28,424 DEBUG    root            Executing command: ['/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin/gsutil', 'config', '-n', '-o', '/Users/rs/.boto']
+2021-02-19 14:09:30,758 DEBUG    ___FILE_ONLY___ 
+2021-02-19 14:09:30,759 DEBUG    ___FILE_ONLY___ This command will create a boto config file at /Users/rs/.boto
+containing your credentials, based on your responses to the following
+questions.
+
+Boto config file "/Users/rs/.boto" created. If you need to use a proxy
+to access the Internet please see the instructions in that file.
+
+2021-02-19 14:09:30,759 INFO     ___FILE_ONLY___ Created a default .boto configuration file at [/Users/rs/.boto]. See this file and
+[https://cloud.google.com/storage/docs/gsutil/commands/config] for more
+information about configuring Google Cloud Storage.
+
+2021-02-19 14:09:30,759 INFO     ___FILE_ONLY___ Your Google Cloud SDK is configured and ready to use!
+
+
+2021-02-19 14:09:30,760 INFO     ___FILE_ONLY___ * Commands that require authentication will use raihan@wartek.belajar.id by default
+
+2021-02-19 14:09:30,760 INFO     ___FILE_ONLY___ * Commands will reference project `wartek-staging` by default
+
+2021-02-19 14:09:30,760 INFO     ___FILE_ONLY___ * Compute Engine commands will use region `asia-southeast2` by default
+
+2021-02-19 14:09:30,760 INFO     ___FILE_ONLY___ * Compute Engine commands will use zone `asia-southeast2-a` by default
+
+
+2021-02-19 14:09:30,760 INFO     ___FILE_ONLY___ Run `gcloud help config` to learn how to change individual settings
+
+
+2021-02-19 14:09:30,760 INFO     ___FILE_ONLY___ This gcloud configuration is called [default]. You can create additional configurations if you work with multiple accounts and/or projects.
+
+2021-02-19 14:09:30,760 INFO     ___FILE_ONLY___ Run `gcloud topic configurations` to learn more.
+
+
+2021-02-19 14:09:30,761 INFO     ___FILE_ONLY___ Some things to try next:
+
+
+2021-02-19 14:09:30,761 INFO     ___FILE_ONLY___ * Run `gcloud --help` to see the Cloud Platform services you can interact with. And run `gcloud help COMMAND` to get help on any gcloud command.
+
+2021-02-19 14:09:30,761 INFO     ___FILE_ONLY___ * Run `gcloud topic --help` to learn about advanced features of the SDK like arg files and output formatting
+
+2021-02-19 14:09:30,762 INFO     root            Display format: "default"
