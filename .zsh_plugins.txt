@@ -1,3 +1,6 @@
+# fzf-tab
+Aloxaf/fzf-tab
+
 # insert omz for goodness
 robbyrussell/oh-my-zsh
 

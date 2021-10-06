@@ -71,4 +71,25 @@ eval "$(rbenv init -)"
 
 alias glb="git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oE '[^ ]+ ~ .*' | awk -F~ '!seen[$1]++' | head -n 10 | awk -F' ~ HEAD@{' '{printf(\"  \\033[33m%s: \\033[37m %s\\033[0m\\n\", substr($2, 1, length($2)-1), $1)}'"
 
+# fzf custom completion
+_fzf_complete_git() {
+    ARGS="$@"
+    local branches
+    branches=$(git branch -vv --all)
+    if [[ $ARGS == 'gco '* ]]; then
+        _fzf_complete --reverse --multi -- "$@" < <(
+            echo $branches
+        )
+    else
+        eval "zle ${fzf_default_completion:-expand-or-complete}"
+    fi
+}
+
+_fzf_complete_git_post() {
+    awk '{print $1}'
+}
+
+[ -n "$BASH" ] && complete -F _fzf_complete_git -o default -o bashdefault git
+
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
