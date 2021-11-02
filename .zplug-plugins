@@ -1,0 +1,32 @@
+# insert omz for goodness
+zplug "robbyrussell/oh-my-zsh"
+
+# random plugins from antibody docs
+zplug "djui/alias-tips"
+zplug "caarlos0/zsh-mkc"
+
+# zsh-z
+zplug "agkozak/zsh-z"
+
+# zsh-users plugin
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-history-substring-search"
+
+# omz plugins
+zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/colored-man-pages", from:oh-my-zsh
+zplug "plugins/colorize", from: oh-my-zsh
+zplug "plugins/iterm2", from:oh-my-zsh
+zplug "plugins/mosh", from:oh-my-zsh
+zplug "plugins/osx", from:oh-my-zsh
+zplug "plugins/thefuck", from:oh-my-zsh
+zplug "plugins/tmux", from:oh-my-zsh
+
+# uncomment for local theme dev
+# somehow the bold is gone if i use local
+# might be something with not using the OMZ path
+#zplug "~/setup/zsh-plugins/re5et-rs.zsh-theme", as:theme, from:local
+
+# my modified theme on github
+zplug "rraihansaputra/setup path:/zsh-plugins/re5et-rs.zsh-theme", as:theme

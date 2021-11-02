@@ -14,7 +14,7 @@
 
 # Configuration
 # set your network service
-network_service="Wi-FI"
+network_service="Wi-Fi"
 
 # add or remove list of DNS options below, don't forget to make it enabled. see below
 # shellcheck disable=2034
