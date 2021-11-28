@@ -1,2 +1,10 @@
 .config/yarn
 .config/oni2
+.config/gcloud
+.config/Autodesk
+.config/configstore
+.config/filezilla
+.config/xbuild
+
+*.pyc
+.DS_Store
