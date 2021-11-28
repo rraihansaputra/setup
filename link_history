@@ -1,6 +1,0 @@
-    9  2019-05-02 15:09  ln -s Brewfile ~./
-   10  2019-05-02 15:09  ln -s Brewfile ~/
-   54  2019-04-05 11:49  ln -sv .zshrc ~/
-   55  2019-04-05 11:49  ln -sv .zshrc ~
-   58  2019-04-05 11:50  ln -sv setup/.zsh_plugins.txt ~
-   60  2019-04-05 11:51  ln -sv setup/.zshrc ~
