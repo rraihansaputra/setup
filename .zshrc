@@ -7,11 +7,6 @@ zstyle :compinstall filename '/Users/rs/.zshrc'
 autoload -Uz compinit
 compinit
 
-
-
-# # load antibody dynamically
-# ANTIBODY_HOME="$(antibody home)"
-
 # OMZ varibles
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
@@ -24,46 +19,54 @@ COMPLETION_WAITING_DOTS="true"
 # stamp shown in the history command output.
 HIST_STAMPS="yyyy-mm-dd"
 
-# # set OMZ directory on antibody
-# export ZSH="$ANTIBODY_HOME"/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh
-
 DISABLE_AUTO_UPDATE="true"
-
-# # load antibody dynamically
-# # TODO change antibody to load from setup dir.
-# source <(antibody init)
-# # load antibody plugins from .zsh_plugins.txt
-# # this only loads when .zsh_plugins exist on source command dir
-# # need to link it somehow..
-# antibody bundle < ~/.zsh_plugins.txt
 
 # zplug section
 
 export ZPLUG_HOME=/opt/homebrew/opt/zplug
 source $ZPLUG_HOME/init.zsh
+
+# history search and stuff
+# TODO find a way to use fzf-tab for history search
+zplug "zsh-users/zsh-history-substring-search"
+zplug "joshskidmore/zsh-fzf-history-search"
+
+# fzf-tab goodness
+zplug "Aloxaf/fzf-tab"
+# disable sort when completing `git checkout`
+zstyle ':completion:*:git-checkout:*' sort false
+# set descriptions format to enable group support
+zstyle ':completion:*:descriptions' format '[%d]'
+# set list-colors to enable filename colorizing
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# preview directory's content with exa when completing cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+# switch group using `,` and `.`
+zstyle ':fzf-tab:*' switch-group ',' '.'
+
 # insert omz for goodness
 zplug "robbyrussell/oh-my-zsh"
 
 # random plugins from antibody docs
 zplug "djui/alias-tips"
 zplug "caarlos0/zsh-mkc"
-
 zplug "agkozak/zsh-z"
 
 # zsh-users plugin
 zplug "zsh-users/zsh-completions"
 
 # zplug "zsh-users/zsh-autosuggestions"
-if zplug check zsh-users/zsh-autosuggestions; then
-  ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(history-substring-search-up history-substring-search-down) # Add history-substring-search-* widgets to list of widgets that clear the autosuggestion
-  ZSH_AUTOSUGGEST_CLEAR_WIDGETS=("${(@)ZSH_AUTOSUGGEST_CLEAR_WIDGETS:#(up|down)-line-or-history}") # Remove *-line-or-history widgets from list of widgets that clear the autosuggestion to avoid conflict with history-substring-search-* widgets
-fi
+# if zplug check zsh-users/zsh-autosuggestions; then
+#   ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(history-substring-search-up history-substring-search-down) # Add history-substring-search-* widgets to list of widgets that clear the autosuggestion
+#   ZSH_AUTOSUGGEST_CLEAR_WIDGETS=("${(@)ZSH_AUTOSUGGEST_CLEAR_WIDGETS:#(up|down)-line-or-history}") # Remove *-line-or-history widgets from list of widgets that clear the autosuggestion to avoid conflict with history-substring-search-* widgets
+# fi
 zplug "zsh-users/zsh-syntax-highlighting"
 
-zplug "zsh-users/zsh-history-substring-search"
+# zplug "zsh-users/zsh-history-substring-search"
 if zplug check zsh-users/zsh-history-substring-search; then
-  bindkey "$terminfo[cuu1]" history-substring-search-up
-  bindkey "$terminfo[cud1]" history-substring-search-down
+  export HISTORY_SUBSTRING_SEARCH_PREFIXED="true"
+  bindkey "^[[A" history-substring-search-up
+  bindkey "^[[B" history-substring-search-down
 fi
 
 # omz plugins
@@ -72,7 +75,7 @@ zplug "plugins/colored-man-pages", from:oh-my-zsh
 zplug "plugins/colorize", from:oh-my-zsh
 zplug "plugins/iterm2", from:oh-my-zsh
 zplug "plugins/mosh", from:oh-my-zsh
-zplug "plugins/osx", from:oh-my-zsh
+zplug "plugins/macos", from:oh-my-zsh
 zplug "plugins/thefuck", from:oh-my-zsh
 zplug "plugins/tmux", from:oh-my-zsh
 
@@ -126,9 +129,9 @@ export PATH=$OPENSSL_PATH:$PATH
 # alias code=/usr/local/bin/code
 
 # init rbenv
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
 
 alias glb="git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oE '[^ ]+ ~ .*' | awk -F~ '!seen[$1]++' | head -n 10 | awk -F' ~ HEAD@{' '{printf(\"  \\033[33m%s: \\033[37m %s\\033[0m\\n\", substr($2, 1, length($2)-1), $1)}'"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PATH="/Users/rs/Library/Python/3.9/bin:$PATH"
+# export PATH="/Users/rs/Library/Python/3.9/bin:$PATH"
