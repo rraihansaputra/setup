@@ -4,7 +4,7 @@
 # The list of DNS options should be defined on this file
 #
 # <bitbar.title>DNS Switcher</bitbar.title>
-# <bitbar.version>v1.4</bitbar.version>
+# <bpitbar.version>v1.4</bitbar.version>
 # <bitbar.author>M Saiqul Haq</bitbar.author>
 # <bitbar.author.github>saiqulhaq</bitbar.author.github>
 # <bitbar.desc>Switch DNS to your defined DNS options.</bitbar.desc>
@@ -104,5 +104,5 @@ dns_address='$(eval "echo \${${dns_name[*]}}")'
 networksetup -setdnsservers $network_service \$(echo \$dns_address)
 EOF
   chmod 777 "$switcher"
-  echo "$dns_name | bash=$switcher | terminal=true | refresh=true"
+  echo "$dns_name | shell=$switcher | terminal=true | refresh=true"
 done
