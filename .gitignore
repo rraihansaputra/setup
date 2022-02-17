@@ -5,6 +5,7 @@
 .config/configstore
 .config/filezilla
 .config/xbuild
+.config/ppsspp
 
 *.pyc
 .DS_Store
