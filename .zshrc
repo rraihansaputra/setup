@@ -106,8 +106,8 @@ zplug "plugins/tmux", from:oh-my-zsh
 # uncomment for local theme dev
 # somehow the bold is gone if i use local
 # might be something with not using the OMZ path
-# zplug "/Users/rs/setup/zsh-plugins", as:theme, from:local, use:"re5et-rs.zsh-theme"
-zplug "rraihansaputra/setup", as:theme, use:"zsh-plugins/re5et-rs.zsh-theme"
+zplug "/Users/rs/setup/zsh-plugins", as:theme, from:local, use:"re5et-rs.zsh-theme"
+# zplug "rraihansaputra/setup", as:theme, use:"zsh-plugins/re5et-rs.zsh-theme"
 # zplug "rraihansaputra/setup", path:/zsh-plugins/re5et-rs.zsh-theme, as:theme
 
 
@@ -159,3 +159,4 @@ alias glb="git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'c
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # export PATH="/Users/rs/Library/Python/3.9/bin:$PATH"
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
