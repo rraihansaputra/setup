@@ -160,3 +160,19 @@ alias glb="git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'c
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # export PATH="/Users/rs/Library/Python/3.9/bin:$PATH"
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

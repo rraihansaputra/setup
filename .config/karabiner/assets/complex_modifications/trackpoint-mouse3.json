@@ -1,0 +1,25 @@
+{
+  "title": "Trackpoint ignore button3 unless alone",
+  "author": "rraihansaputra",
+  "homepage": "",
+  "hostpage": "",
+  "manual": "",
+  "rules": [
+    {
+      "description": "Ignore button3 unless alone",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "pointing_button": "button3",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to_if_alone": [{ "pointing_button": "button3" }],
+          "to_if_held_down": [{ "key_code": "vk_none" }]
+        }
+      ]
+    }
+  ]
+}

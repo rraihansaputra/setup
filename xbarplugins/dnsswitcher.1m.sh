@@ -88,9 +88,11 @@ fi
 ### Bitbar Menu
 if [[ $selected_dns == "Unknown" ]]
 then
-    echo "Unrecognized DNS"
+    # echo "Unrecognized DNS"
+	echo "???"
 else
-    echo "$selected_dns"
+    echo "${selected_dns:0:3}"
+	# echo "${$selected_dns:0:3}"
 fi
 
 echo "---"
