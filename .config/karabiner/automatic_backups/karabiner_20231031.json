@@ -1,5 +1,6 @@
 {
     "global": {
+        "ask_for_confirmation_before_quitting": true,
         "check_for_updates_on_startup": true,
         "show_in_menu_bar": true,
         "show_profile_name_in_menu_bar": false,
@@ -16,6 +17,29 @@
                     "mouse_motion_to_scroll.speed": 100
                 },
                 "rules": [
+                    {
+                        "description": "Change mute to always mute",
+                        "manipulators": [
+                            {
+                                "conditions": [],
+                                "from": {
+                                    "key_code": "mute",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "parameters": {},
+                                "to": [
+                                    {
+                                        "shell_command": "osascript -e 'set volume output muted true'"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
                     {
                         "description": "CapsLock to Hyper/Escape",
                         "manipulators": [
@@ -4492,7 +4516,10 @@
                     },
                     "to": [
                         {
-                            "consumer_key_code": "mute"
+                            "shell_command": "osascript -e 'set volume output muted true'"
+                        },
+                        {
+                            "shell_command": "osascript -e 'display notification \"Volume\" with title \"Muted\"'"
                         }
                     ]
                 },
@@ -4596,6 +4623,20 @@
                     },
                     "ignore": true,
                     "manipulate_caps_lock_led": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 24801,
+                        "vendor_id": 6127
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": true,
                     "simple_modifications": [],
                     "treat_as_built_in_keyboard": false
                 }

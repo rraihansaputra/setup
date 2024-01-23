@@ -1,0 +1,186 @@
+{
+  "workbench.colorTheme": "Cobalt2",
+  // Customize UI Stuff
+  "customizeUI.font.regular": "Inter",
+  "customizeUI.font.monospace": "Input Sans",
+  "customizeUI.titleBar": "inline",
+  "window.titleBarStyle": "native",
+  // "customizeUI.fontSizeMap": {
+  //     // "13px": "11px",
+  //     // "tab-title": "11px",
+  //     // "12px": "10px",
+  //     // "monospace": "11px"
+  // },
+  // Font and text config
+  // "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
+  // "editor.fontFamily": "'Liga Input Sans Ligaturized', Fira Code, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "'Input Sans', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 14,
+  "editor.fontWeight": "400",
+  "editor.letterSpacing": 0.3,
+  "terminal.integrated.fontFamily": "Input Mono",
+  "terminal.integrated.fontSize": 14,
+  "editor.fontLigatures": true,
+
+  "workbench.fontAliasing": "auto",
+  // "editor.renderWhitespace": "boundary",
+  // Terminal
+  "terminal.external.osxExec": "iTerm2.app",
+  "terminal.integrated.shell.osx": "/opt/homebrew/bin/zsh",
+  "terminal.integrated.rendererType": "canvas",
+  // Editing experience
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "breadcrumbs.enabled": true,
+  "workbench.editor.showTabs": false,
+  "editor.acceptSuggestionOnEnter": "on",
+  "editor.showFoldingControls": "always",
+  "diffEditor.renderSideBySide": true,
+  "editor.formatOnSave": false,
+  "git.suggestSmartCommit": false,
+  "todo-tree.tree.hideTreeWhenEmpty": false,
+  "auto-close-tag.disableOnLanguage": ["typescript"],
+  // Visual cleanup
+  "search.showLineNumbers": true,
+  "workbench.statusBar.feedback.visible": false,
+  "workbench.sideBar.location": "left",
+  "editor.minimap.enabled": false,
+  "editor.lineNumbers": "on", // change to relative if i want vim style
+  "editor.glyphMargin": false, // Space for debugging, turn true to debug
+  "editor.lineDecorationsWidth": 0,
+  "editor.lineNumberMinChars": 0,
+  "workbench.activityBar.visible": false,
+  "gitlens.blame.heatmap.enabled": false,
+  "gitlens.codeLens.recentChange.enabled": false,
+  "gitlens.codeLens.authors.enabled": false,
+  "gitlens.codeLens.enabled": false,
+  "gitlens.blame.separateLines": false,
+  "todo-tree.tree.showScanModeButton": false,
+  // Misc Tuning
+  "workbench.startupEditor": "newUntitledFile",
+  "path-intellisense.showHiddenFiles": true,
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+  "files.insertFinalNewline": true,
+  "gitlens.showWhatsNewAfterUpgrades": false,
+  // Lang specific configs
+  "[vue]": {
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    }
+  },
+  "vetur.experimental.templateInterpolationService": true,
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "eslint.format.enable": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "[typescript]": {
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "sync.gist": "e0a3b3339b0ed1424a56cad22600e3fd",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "[svelte]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "svelte.enable-ts-plugin": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          "keyword.operator.ternary",
+          "keyword.operator.logical",
+          "keyword.control"
+        ],
+        "settings": {
+          "fontStyle": "bold underline"
+        }
+      },
+      {
+        "scope": ["keyword.control.flow", "keyword.control.trycatch"],
+        "settings": {
+          "foreground": "#ff5100",
+          "fontStyle": "bold underline"
+        }
+      },
+      {
+        "scope": ["punctuation.definition.tag"],
+        "settings": {
+          "foreground": "#5e76a7",
+        }
+      },
+      {
+        "scope": ["storage.type", "punctuation.separator.label", "entity.name.label"],
+        "settings": {
+          "foreground": "#6d90d6",
+        }
+      },
+      {
+        "scope": ["text"],
+        "settings": {
+          "foreground": "#f5c0c0",
+        }
+      }
+    ]
+  },
+  "editor.guides.bracketPairsHorizontal": false,
+  "sync.forceUpload": true,
+
+  "terminal.integrated.env.osx": {
+    "GITLAB_AUTH_TOKEN": "glpat-K21zVoc6uQZMSXxRPpGw"
+  },
+  "redhat.telemetry.enabled": false,
+  "notebook.output.textLineLimit": 100,
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[terraform]": {
+    "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
+  },
+  "sqltools.connections": [
+    {
+      "mysqlOptions": {
+        "authProtocol": "xprotocol"
+      },
+      "previewLimit": 50,
+      "server": "34.143.184.159",
+      "port": 3306,
+      "driver": "MySQL",
+      "name": "disco-rope-344309:asia-southeast1:torche-customer",
+      "database": "wordpress",
+      "username": "wordpress",
+      "password": "SfbrF8MU",
+      "connectionTimeout": 60
+    }
+  ],
+  "latex-workshop.view.pdf.viewer": "tab",
+  "liveshare.presence": true,
+}

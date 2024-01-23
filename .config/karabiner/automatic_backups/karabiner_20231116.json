@@ -18,6 +18,29 @@
                 },
                 "rules": [
                     {
+                        "description": "Change mute to always mute",
+                        "manipulators": [
+                            {
+                                "conditions": [],
+                                "from": {
+                                    "key_code": "mute",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "parameters": {},
+                                "to": [
+                                    {
+                                        "shell_command": "osascript -e 'set volume output muted true'"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "CapsLock to Hyper/Escape",
                         "manipulators": [
                             {
@@ -4493,7 +4516,10 @@
                     },
                     "to": [
                         {
-                            "consumer_key_code": "mute"
+                            "shell_command": "osascript -e 'set volume output muted true'"
+                        },
+                        {
+                            "shell_command": "osascript -e 'display notification \"Volume\" with title \"Muted\"'"
                         }
                     ]
                 },

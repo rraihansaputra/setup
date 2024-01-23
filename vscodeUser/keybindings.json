@@ -1,0 +1,23 @@
+// Place your key bindings in this file to override the defaults
+[
+    { "key": "cmd+;",       "command": "workbench.action.maximizeEditor" },
+    { "key": "cmd+shift+;", "command": "workbench.action.toggleMaximizedPanel"},
+    { "key": "cmd+k a",     "command": "workbench.action.editorLayoutSingle" },
+    { "key": "cmd+k o",     "command": "workbench.action.editorLayoutTwoColumns" },
+    {
+        "key": "cmd+k e",
+        "command": "workbench.action.editorLayoutThreeColumns"
+    },
+    {
+        "key": "alt+=",
+        "command": "editor.action.fontZoomIn"
+    },
+    {
+        "key": "alt+-",
+        "command": "editor.action.fontZoomOut"
+    },
+    {
+        "key": "alt+\\",
+        "command": "editor.action.fontZoomReset"
+    },
+]
