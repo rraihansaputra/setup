@@ -6,6 +6,17 @@
 .config/filezilla
 .config/xbuild
 .config/ppsspp
+.config/Dadroit
+.config/EasyRPG
+.config/fontforge
+.config/gpt4all.io
+.config/instaloader
+.config/pudb
+
+vscodeUser/History
+vscodeUser/globalStorage
+vscodeUser/workspaceStorage
 
 *.pyc
 .DS_Store
+**/.DS_Store
