@@ -183,3 +183,15 @@ unset __conda_setup
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+
+# Created by `pipx` on 2024-08-28 11:12:02
+export PATH="$PATH:/Users/rs/.local/bin"
+eval "$(uv generate-shell-completion zsh)"
+eval "$(uvx --generate-shell-completion zsh)"
+
+# GO
+export GOPATH=$HOME/golang
+# export GOROOT=/opt/homebrew/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+# export PATH=$PATH:$GOROOT/bin
