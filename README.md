@@ -19,6 +19,7 @@ brew bundle --file setup/Brewfile
 **Link dotfiles**
 ```
 ln -sv setup/.zshrc ~
+ln -sv setup/.tool-versions ~ # asdf globals
 ln -sv setup/.config ~ # for karabiner and other stuff
 ln -sv setup/.vimrc ~
 ```
