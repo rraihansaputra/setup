@@ -16,6 +16,17 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
+export LANG=en_US.UTF-8
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+export PATH="$PATH:/Users/rs/.local/bin"
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+export ANDROID_HOME="/Users/rs/Library/Android/sdk"
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/28.0.3
+export LDFLAGS="-I/usr/local/opt/openssl@1.1/include -L/usr/local/opt/openssl@1.1/lib"
+export OPENSSL_PATH="/usr/local/opt/openssl@1.1/bin"
+export PATH=$OPENSSL_PATH:$PATH
+
 # Load core plugins
 zinit wait lucid for \
     djui/alias-tips \
@@ -23,85 +34,39 @@ zinit wait lucid for \
     agkozak/zsh-z
 
 zinit snippet OMZL::theme-and-appearance.zsh
-
 zinit snippet OMZL::git.zsh
-zinit ice wait lucid
-zinit snippet OMZP::git
-zinit ice wait lucid
-zinit snippet OMZL::functions.zsh
-zinit ice wait lucid
-zinit snippet OMZL::completion.zsh
-
-
-# asdf-direnv
-zinit ice wait lucid
-zinit load redxtech/zsh-asdf-direnv
 
 zinit wait lucid for \
+    OMZP::git \
+    OMZL::functions.zsh \
+    OMZL::completion.zsh
+
+# Development tool plugins
+zinit wait lucid for \
+    OMZP::asdf \
+    redxtech/zsh-asdf-direnv
+
+zinit wait"1" lucid for \
     OMZP::colored-man-pages \
     OMZP::colorize \
     OMZP::iterm2 \
     OMZP::mosh \
     OMZP::thefuck \
     OMZP::tmux \
-    OMZP::asdf
     # OMZP::macos \
-
-# Environment variables
-export LANG=en_US.UTF-8
-export ANDROID_HOME="/Users/rs/Library/Android/sdk"
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/28.0.3
-export LDFLAGS="-I/usr/local/opt/openssl@1.1/include -L/usr/local/opt/openssl@1.1/lib"
-export OPENSSL_PATH="/usr/local/opt/openssl@1.1/bin"
-export PATH=$OPENSSL_PATH:$PATH
 
 # Custom aliases
 alias glb="git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oE '[^ ]+ ~ .*' | awk -F~ '!seen[$1]++' | head -n 10 | awk -F' ~ HEAD@{' '{printf(\"  \\033[33m%s: \\033[37m %s\\033[0m\\n\", substr($2, 1, length($2)-1), $1)}'"
 
-export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
-export PATH="$PATH:/Users/rs/.local/bin"
+# Tool initializations (fixed quotes)
+zinit wait"2" lucid as"null" for \
+    atload'[ -s "/Users/rs/.bun/_bun" ] && source "/Users/rs/.bun/_bun"' \
+    atload'[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh' \
+    atload'. ~/.asdf/plugins/golang/set-env.zsh' \
+    atload'eval "$(uv generate-shell-completion zsh)"' \
+    atload'eval "$(uvx --generate-shell-completion zsh)"' \
+    zdharma-continuum/null
 
-# Additional tools initialization
-
-# Bun setup
-zinit ice wait lucid atload'
-    [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-'
-
-zinit ice wait lucid atload'
-    [ -s "/Users/rs/.bun/_bun" ] && source "/Users/rs/.bun/_bun"
-'
-
-zinit ice wait lucid atload'
-    eval "$(uv generate-shell-completion zsh)"
-    eval "$(uvx --generate-shell-completion zsh)"
-'
-
-zinit ice wait lucid atload'
-    # Load asdf-golang environment
-    . ~/.asdf/plugins/golang/set-env.zsh
-'
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# Conda initialization
-conda() {
-  # Load conda only on first use
-  unfunction conda
-  __conda_setup="$("/opt/miniconda3/bin/conda" "shell.zsh" "hook" 2> /dev/null)"
-  if [ $? -eq 0 ]; then
-      eval "$__conda_setup"
-  else
-      if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
-          . "/opt/miniconda3/etc/profile.d/conda.sh"
-      else
-          export PATH="/opt/miniconda3/bin:$PATH"
-      fi
-  fi
-  unset __conda_setup
-  # Now run the actual conda command
-  conda "$@"
-}
 # History and search plugins
 zinit wait lucid for \
   zdharma-continuum/history-search-multi-word \
@@ -148,6 +113,25 @@ zinit wait lucid for \
     zsh-users/zsh-completions \
     atinit"zicompinit; zicdreplay" \
     zdharma-continuum/fast-syntax-highlighting
+
+# Lazy load conda
+conda() {
+  unfunction conda
+  __conda_setup="$("/opt/miniconda3/bin/conda" "shell.zsh" "hook" 2> /dev/null)"
+  if [ $? -eq 0 ]; then
+      eval "$__conda_setup"
+  else
+      if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
+          . "/opt/miniconda3/etc/profile.d/conda.sh"
+      else
+          export PATH="/opt/miniconda3/bin:$PATH"
+      fi
+  fi
+  unset __conda_setup
+  conda "$@"
+}
+
+
 ####
 # re5et-rs theme
 function git_prompt_info() {
@@ -187,9 +171,26 @@ if [ "$USER" = "root" ]; then CARETCOLOR="red"; else CARETCOLOR="green"; fi
 
 local return_code="%(?..%{$fg_bold[red]%}:( %?%{$reset_color%})"
 
+# Add this function to format directory paths
+function formatted_path() {
+    local p=${PWD/#$HOME/\~}  # Replace $HOME with ~
+
+    # For ~/Projects path
+    if [[ $p == "~/Projects"* ]]; then
+        # p=${p/#\~\/Projects/※}  # Replace ~/Projects with ※
+        p=${p/#\~\/Projects/👨‍🍳}  # Replace ~/Projects with ※
+    fi
+
+    echo $p
+}
+
+# Update your PROMPT to use formatted_path and clean machine name
 PROMPT='
-%{$fg[cyan]%}%n%{$reset_color%}%{$fg[yellow]%}@%{$reset_color%}%{$fg[blue]%}%m%{$reset_color%}:%{${fg[green]}%}%~%{$reset_color%}$(git_prompt_info_with_last_commit_message)
+%{$fg[cyan]%}%n%{$reset_color%}%{$fg[yellow]%}@%{$reset_color%}%{$fg[blue]%}a%{$reset_color%}:%{${fg[green]}%}$(formatted_path)%{$reset_color%}$(git_prompt_info_with_last_commit_message)
 %{${fg[$CARETCOLOR]}%}%# %{${reset_color}%}'
+# PROMPT='
+# %{$fg[cyan]%}%n%{$reset_color%}%{$fg[yellow]%}@%{$reset_color%}%{$fg[blue]%}%m%{$reset_color%}:%{${fg[green]}%}%~%{$reset_color%}$(git_prompt_info_with_last_commit_message)
+# %{${fg[$CARETCOLOR]}%}%# %{${reset_color}%}'
 
 RPS1='${return_code} %D - %*'
 
