@@ -1,202 +1,200 @@
+# History configuration
 HISTFILE=~/.histfile
 HISTSIZE=100000
 SAVEHIST=1000000
 bindkey -e
-zstyle :compinstall filename '/Users/rs/.zshrc'
 
-autoload -Uz compinit
-compinit
-
-# OMZ varibles
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
+# Oh My Zsh settings
 HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
 HIST_STAMPS="yyyy-mm-dd"
-
 DISABLE_AUTO_UPDATE="true"
 
-# zplug section
+# Initialize zinit
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+source "${ZINIT_HOME}/zinit.zsh"
 
-export ZPLUG_HOME=/opt/homebrew/opt/zplug
-source $ZPLUG_HOME/init.zsh
+# Load core plugins
+zinit wait lucid for \
+    djui/alias-tips \
+    caarlos0/zsh-mkc \
+    agkozak/zsh-z
 
-# history search and stuff
-# TODO find a way to use fzf-tab for history search
-zplug "zsh-users/zsh-history-substring-search"
-zplug "joshskidmore/zsh-fzf-history-search"
+zinit snippet OMZL::theme-and-appearance.zsh
 
-# fzf-tab goodness
-zplug "Aloxaf/fzf-tab"
-# disable sort when completing `git checkout`
-zstyle ':completion:*:git-checkout:*' sort false
-# set descriptions format to enable group support
-zstyle ':completion:*:descriptions' format '[%d]'
-# set list-colors to enable filename colorizing
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-# preview directory's content with exa when completing cd
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
-# switch group using `,` and `.`
-zstyle ':fzf-tab:*' switch-group ',' '.'
-# pipe out environment variables
-zstyle ':fzf-tab:complete:(-command-|-parameter-|-brace-parameter-|export|unset|expand):*' \
-	fzf-preview 'echo ${(P)word}'
-# git preview
-zstyle ':fzf-tab:complete:git-(add|diff|restore):*' fzf-preview \
-	'git diff $word | delta'|
-zstyle ':fzf-tab:complete:git-log:*' fzf-preview \
-	'git log --color=always $word'
-zstyle ':fzf-tab:complete:git-help:*' fzf-preview \
-	'git help $word | bat -plman --color=always'
-zstyle ':fzf-tab:complete:git-show:*' fzf-preview \
-	'case "$group" in
-	"commit tag") git show --color=always $word ;;
-	*) git show --color=always $word | delta ;;
-	esac'
-zstyle ':fzf-tab:complete:git-checkout:*' fzf-preview \
-	'case "$group" in
-	"modified file") git diff $word | delta ;;
-	"recent commit object name") git show --color=always $word | delta ;;
-	*) git log --color=always --pretty="%Cgreen %ar %Cred%h %Creset%an %n  %s" $word ;;
-	esac'
-# file preview
-zstyle ':fzf-tab:complete:*:*' fzf-preview 'less ${(Q)realpath}'
-export LESSOPEN='|~/.lessfilter %s'
+zinit snippet OMZL::git.zsh
+zinit ice wait lucid
+zinit snippet OMZP::git
+zinit ice wait lucid
+zinit snippet OMZL::functions.zsh
+zinit ice wait lucid
+zinit snippet OMZL::completion.zsh
 
-# insert omz for goodness
-zplug "robbyrussell/oh-my-zsh"
 
-# random plugins from antibody docs
-zplug "djui/alias-tips"
-zplug "caarlos0/zsh-mkc"
-zplug "agkozak/zsh-z"
+# asdf-direnv
+zinit ice wait lucid
+zinit load redxtech/zsh-asdf-direnv
 
-# zsh-users plugin
-zplug "zsh-users/zsh-completions"
+zinit wait lucid for \
+    OMZP::colored-man-pages \
+    OMZP::colorize \
+    OMZP::iterm2 \
+    OMZP::mosh \
+    OMZP::thefuck \
+    OMZP::tmux \
+    OMZP::asdf
+    # OMZP::macos \
 
-# zplug "zsh-users/zsh-autosuggestions"
-# if zplug check zsh-users/zsh-autosuggestions; then
-#   ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(history-substring-search-up history-substring-search-down) # Add history-substring-search-* widgets to list of widgets that clear the autosuggestion
-#   ZSH_AUTOSUGGEST_CLEAR_WIDGETS=("${(@)ZSH_AUTOSUGGEST_CLEAR_WIDGETS:#(up|down)-line-or-history}") # Remove *-line-or-history widgets from list of widgets that clear the autosuggestion to avoid conflict with history-substring-search-* widgets
-# fi
-zplug "zsh-users/zsh-syntax-highlighting"
-
-# zplug "zsh-users/zsh-history-substring-search"
-if zplug check zsh-users/zsh-history-substring-search; then
-  export HISTORY_SUBSTRING_SEARCH_PREFIXED="true"
-  bindkey "^[[A" history-substring-search-up
-  bindkey "^[[B" history-substring-search-down
-fi
-
-# omz plugins
-zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/colored-man-pages", from:oh-my-zsh
-zplug "plugins/colorize", from:oh-my-zsh
-zplug "plugins/iterm2", from:oh-my-zsh
-zplug "plugins/mosh", from:oh-my-zsh
-zplug "plugins/macos", from:oh-my-zsh
-zplug "plugins/thefuck", from:oh-my-zsh
-zplug "plugins/tmux", from:oh-my-zsh
-zplug "plugins/asdf", from:oh-my-zsh
-
-# uncomment for local theme dev
-# somehow the bold is gone if i use local
-# might be something with not using the OMZ path
-zplug "/Users/rs/setup/zsh-plugins", as:theme, from:local, use:"re5et-rs.zsh-theme"
-# zplug "rraihansaputra/setup", as:theme, use:"zsh-plugins/re5et-rs.zsh-theme"
-# zplug "rraihansaputra/setup", path:/zsh-plugins/re5et-rs.zsh-theme, as:theme
-
-# add asdf-direnv managed by zplug
-zplug "redxtech/zsh-asdf-direnv"
-
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-
-zplug load # --verbose
-
-# avoid language woes
+# Environment variables
 export LANG=en_US.UTF-8
-
-# java version configs
-# export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
-# export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
-# export JAVA_12_HOME=$(/usr/libexec/java_home -v12)
-
-# alias java8='export JAVA_HOME=$JAVA_8_HOME'
-# alias java11='export JAVA_HOME=$JAVA_11_HOME'
-# alias java12='export JAVA_HOME=$JAVA_12_HOME'
-
-# default to java11 for armillary/taiger
-# java11
-
-# android dev vars
-# export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home"
 export ANDROID_HOME="/Users/rs/Library/Android/sdk"
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/28.0.3
-
-# default openssh to brew
 export LDFLAGS="-I/usr/local/opt/openssl@1.1/include -L/usr/local/opt/openssl@1.1/lib"
-
-# add brew openssh to PATH
 export OPENSSL_PATH="/usr/local/opt/openssl@1.1/bin"
 export PATH=$OPENSSL_PATH:$PATH
 
-# personal aliases
-# alias vsc=/usr/local/bin/vsc
-# alias code=/usr/local/bin/code
-
-# init rbenv
-# eval "$(rbenv init -)"
-
+# Custom aliases
 alias glb="git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oE '[^ ]+ ~ .*' | awk -F~ '!seen[$1]++' | head -n 10 | awk -F' ~ HEAD@{' '{printf(\"  \\033[33m%s: \\033[37m %s\\033[0m\\n\", substr($2, 1, length($2)-1), $1)}'"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# export PATH="/Users/rs/Library/Python/3.9/bin:$PATH"
-# . /opt/homebrew/opt/asdf/libexec/asdf.sh
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+export PATH="$PATH:/Users/rs/.local/bin"
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/opt/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/opt/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+# Additional tools initialization
 
+# Bun setup
+zinit ice wait lucid atload'
+    [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+'
 
-# bun completions
-[ -s "/Users/rs/.bun/_bun" ] && source "/Users/rs/.bun/_bun"
+zinit ice wait lucid atload'
+    [ -s "/Users/rs/.bun/_bun" ] && source "/Users/rs/.bun/_bun"
+'
 
-# bun
+zinit ice wait lucid atload'
+    eval "$(uv generate-shell-completion zsh)"
+    eval "$(uvx --generate-shell-completion zsh)"
+'
+
+zinit ice wait lucid atload'
+    # Load asdf-golang environment
+    . ~/.asdf/plugins/golang/set-env.zsh
+'
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 
-# Created by `pipx` on 2024-08-28 11:12:02
-export PATH="$PATH:/Users/rs/.local/bin"
-eval "$(uv generate-shell-completion zsh)"
-eval "$(uvx --generate-shell-completion zsh)"
+# Conda initialization
+conda() {
+  # Load conda only on first use
+  unfunction conda
+  __conda_setup="$("/opt/miniconda3/bin/conda" "shell.zsh" "hook" 2> /dev/null)"
+  if [ $? -eq 0 ]; then
+      eval "$__conda_setup"
+  else
+      if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
+          . "/opt/miniconda3/etc/profile.d/conda.sh"
+      else
+          export PATH="/opt/miniconda3/bin:$PATH"
+      fi
+  fi
+  unset __conda_setup
+  # Now run the actual conda command
+  conda "$@"
+}
+# History and search plugins
+zinit wait lucid for \
+  zdharma-continuum/history-search-multi-word \
+  joshskidmore/zsh-fzf-history-search
 
-# GO
-# export GOPATH=$HOME/golang
-# export GOROOT=/opt/homebrew/opt/go/libexec
-# export PATH=$PATH:$GOPATH/bin
-# export PATH=$PATH:$GOROOT/bin
+# Load fzf-tab with configuration
+zinit wait lucid for \
+  Aloxaf/fzf-tab
 
-. ~/.asdf/plugins/golang/set-env.zsh
+# fzf-tab configuration
+zinit ice wait lucid atload"
+    zstyle ':completion:*:git-checkout:*' sort false
+    zstyle ':completion:*:descriptions' format '[%d]'
+    zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+    zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+    zstyle ':fzf-tab:*' switch-group ',' '.'
+    zstyle ':fzf-tab:complete:(-command-|-parameter-|-brace-parameter-|export|unset|expand):*' \
+        fzf-preview 'echo ${(P)word}'
+    zstyle ':fzf-tab:complete:git-(add|diff|restore):*' fzf-preview \
+        'git diff $word | delta'
+    zstyle ':fzf-tab:complete:git-log:*' fzf-preview \
+        'git log --color=always $word'
+    zstyle ':fzf-tab:complete:git-help:*' fzf-preview \
+        'git help $word | bat -plman --color=always'
+    zstyle ':fzf-tab:complete:git-show:*' fzf-preview \
+        'case "$group" in
+        "commit tag") git show --color=always $word ;;
+        *) git show --color=always $word | delta ;;
+        esac'
+    zstyle ':fzf-tab:complete:git-checkout:*' fzf-preview \
+        'case "$group" in
+        "modified file") git diff $word | delta ;;
+        "recent commit object name") git show --color=always $word | delta ;;
+        *) git log --color=always --pretty="%Cgreen %ar %Cred%h %Creset%an %n  %s" $word ;;
+        esac'
+    zstyle ':fzf-tab:complete:*:*' fzf-preview 'less ${(Q)realpath}'
+"
+
+# Completions and syntax highlighting
+zinit wait lucid for \
+    atload"_zsh_autosuggest_start" \
+    zsh-users/zsh-autosuggestions \
+    blockf atpull'zinit creinstall -q .' \
+    zsh-users/zsh-completions \
+    atinit"zicompinit; zicdreplay" \
+    zdharma-continuum/fast-syntax-highlighting
+####
+# re5et-rs theme
+function git_prompt_info() {
+  ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
+  ref=$(command git rev-parse --short HEAD 2> /dev/null) || return 0
+  echo "${ZSH_THEME_GIT_PROMPT_PREFIX}${ref#refs/heads/}$(parse_git_dirty)${ZSH_THEME_GIT_PROMPT_SUFFIX}"
+}
+
+function parse_git_dirty() {
+  local STATUS
+  local -a FLAGS
+  FLAGS=('--porcelain')
+  if [[ "$(__git_prompt_git config --get oh-my-zsh.hide-dirty)" != "1" ]]; then
+    if [[ "${DISABLE_UNTRACKED_FILES_DIRTY}" == "true" ]]; then
+      FLAGS+='--untracked-files=no'
+    fi
+    STATUS=$(__git_prompt_git status ${FLAGS} 2> /dev/null | tail -n1)
+  fi
+  if [[ -n $STATUS ]]; then
+    echo "$ZSH_THEME_GIT_PROMPT_DIRTY"
+  else
+    echo "$ZSH_THEME_GIT_PROMPT_CLEAN"
+  fi
+}
+
+function git_commit_message() {
+    local COMMIT_MSG
+    COMMIT_MSG=$(__git_prompt_git log -1 --oneline 2> /dev/null) && echo "%{$reset_color%}
+%{$fg[yellow]%}$COMMIT_MSG%{$reset_color%}"
+}
+
+function git_prompt_info_with_last_commit_message() {
+    echo "$(git_prompt_info)$(git_commit_message)"
+}
+
+if [ "$USER" = "root" ]; then CARETCOLOR="red"; else CARETCOLOR="green"; fi
+
+local return_code="%(?..%{$fg_bold[red]%}:( %?%{$reset_color%})"
+
+PROMPT='
+%{$fg[cyan]%}%n%{$reset_color%}%{$fg[yellow]%}@%{$reset_color%}%{$fg[blue]%}%m%{$reset_color%}:%{${fg[green]}%}%~%{$reset_color%}$(git_prompt_info_with_last_commit_message)
+%{${fg[$CARETCOLOR]}%}%# %{${reset_color}%}'
+
+RPS1='${return_code} %D - %*'
+
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[magenta]%}^%{$reset_color%}%{$fg[yellow]%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX=""
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%} pls commit"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%} ?"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%} ok"
