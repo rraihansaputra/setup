@@ -102,6 +102,7 @@ zplug "plugins/mosh", from:oh-my-zsh
 zplug "plugins/macos", from:oh-my-zsh
 zplug "plugins/thefuck", from:oh-my-zsh
 zplug "plugins/tmux", from:oh-my-zsh
+zplug "plugins/asdf", from:oh-my-zsh
 
 # uncomment for local theme dev
 # somehow the bold is gone if i use local
@@ -110,6 +111,8 @@ zplug "/Users/rs/setup/zsh-plugins", as:theme, from:local, use:"re5et-rs.zsh-the
 # zplug "rraihansaputra/setup", as:theme, use:"zsh-plugins/re5et-rs.zsh-theme"
 # zplug "rraihansaputra/setup", path:/zsh-plugins/re5et-rs.zsh-theme, as:theme
 
+# add asdf-direnv managed by zplug
+zplug "redxtech/zsh-asdf-direnv"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -159,7 +162,7 @@ alias glb="git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'c
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # export PATH="/Users/rs/Library/Python/3.9/bin:$PATH"
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+# . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -191,7 +194,9 @@ eval "$(uv generate-shell-completion zsh)"
 eval "$(uvx --generate-shell-completion zsh)"
 
 # GO
-export GOPATH=$HOME/golang
+# export GOPATH=$HOME/golang
 # export GOROOT=/opt/homebrew/opt/go/libexec
-export PATH=$PATH:$GOPATH/bin
+# export PATH=$PATH:$GOPATH/bin
 # export PATH=$PATH:$GOROOT/bin
+
+. ~/.asdf/plugins/golang/set-env.zsh
