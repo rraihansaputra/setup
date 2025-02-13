@@ -27,6 +27,7 @@ export LDFLAGS="-I/usr/local/opt/openssl@1.1/include -L/usr/local/opt/openssl@1.
 export OPENSSL_PATH="/usr/local/opt/openssl@1.1/bin"
 export PATH=$OPENSSL_PATH:$PATH
 
+
 # Load core plugins
 zinit wait lucid for \
     djui/alias-tips \
@@ -199,3 +200,4 @@ ZSH_THEME_GIT_PROMPT_SUFFIX=""
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%} pls commit"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%} ?"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%} ok"
+source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
