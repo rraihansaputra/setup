@@ -18,10 +18,10 @@ source "${ZINIT_HOME}/zinit.zsh"
 
 export LANG=en_US.UTF-8
 export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
-export PATH="$PATH:/Users/rs/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-export ANDROID_HOME="/Users/rs/Library/Android/sdk"
+export ANDROID_HOME="$HOME/Library/Android/sdk"
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/28.0.3
 export LDFLAGS="-I/usr/local/opt/openssl@1.1/include -L/usr/local/opt/openssl@1.1/lib"
 export OPENSSL_PATH="/usr/local/opt/openssl@1.1/bin"
@@ -61,7 +61,7 @@ alias glb="git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'c
 
 # Tool initializations (fixed quotes)
 zinit wait"2" lucid as"null" for \
-    atload'[ -s "/Users/rs/.bun/_bun" ] && source "/Users/rs/.bun/_bun"' \
+    atload'[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"' \
     atload'[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh' \
     atload'. ~/.asdf/plugins/golang/set-env.zsh' \
     atload'eval "$(uv generate-shell-completion zsh)"' \
@@ -132,6 +132,9 @@ conda() {
   conda "$@"
 }
 
+# flutter
+export PATH=$HOMEn/Projects/nafas/deps/flutter:$PATH
+
 
 ####
 # re5et-rs theme
@@ -201,3 +204,13 @@ ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%} pls commit"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%} ?"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%} ok"
 source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
+
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /Users/rsn/.dart-cli-completion/zsh-config.zsh ]] && . /Users/rsn/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+
+export PATH="/opt/homebrew/opt/php@7.4/bin:$PATH"
+export PATH="/opt/homebrew/opt/php@7.4/sbin:$PATH"

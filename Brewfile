@@ -372,16 +372,6 @@ brew "gromgit/fuse/ifuse-mac"
 brew "guillemcastro/spotify-dl/spotify-dl"
 # Everything you need to get started with Heroku
 brew "heroku/brew/heroku"
-# ODBC Driver for Microsoft(R) SQL Server(R)
-brew "microsoft/mssql-release/msodbcsql17"
-# ODBC Driver for Microsoft(R) SQL Server(R)
-brew "microsoft/mssql-release/msodbcsql@13.1.9.2"
-# Sqlcmd and Bcp for Microsoft(R) SQL Server(R)
-brew "microsoft/mssql-release/mssql-tools", link: false
-# Sqlcmd and Bcp for Microsoft(R) SQL Server(R)
-brew "microsoft/mssql-release/mssql-tools@14.0.6.0"
-# Menu bar app that allows playing Ace Stream video streams in the VLC player
-cask "ace-link"
 # Sony PlayStation 2 emulator for ARM based Macs
 cask "aethersx2"
 # Application launcher and productivity software
@@ -392,20 +382,8 @@ cask "alt-tab"
 cask "amethyst"
 # Transfer files from and to an Android smartphone
 cask "android-file-transfer"
-# Tools for building Android applications
-cask "android-studio"
-# Spaced Repetition Flashcard App
-cask "ankiapp"
-# Uninstaller and cleaning assistant
-cask "app-cleaner"
-# Application uninstaller
-cask "appcleaner"
-# Electronics prototyping platform
-cask "arduino-ide"
 # Open-source KVM software
 cask "barrier"
-# Compact TeX distribution as alternative to the full TeX Live / MacTeX
-cask "basictex"
 # Display management tool
 cask "betterdisplay"
 # Desktop password and login vault
@@ -422,14 +400,8 @@ cask "caffeine"
 cask "core-tunnel"
 # Server and cloud storage browser
 cask "cyberduck"
-# JSON Viewer
-cask "dadroit-json-viewer"
-# Photography workflow application and raw developer
-cask "darktable"
 # Disk usage utility
 cask "disk-inventory-x"
-# Application window manager focusing on simplicity
-cask "divvy"
 # App to build and share containerised applications and microservices
 cask "docker"
 # Tool to hide status bar icons
@@ -455,58 +427,34 @@ cask "google-chrome"
 cask "google-chrome@canary"
 # Set of tools to manage resources and applications hosted on Google Cloud
 cask "google-cloud-sdk"
-# Graphically shows disk usage within a file system
-cask "grandperspective"
 # Menu bar application that displays the CPU speed limit due to thermal issues
 cask "hot"
 # HTTP and GraphQL Client
 cask "insomnia"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
-# App to visualise, validate and format JSON datasets
-cask "json-viewer"
 # Keyboard customiser
 cask "karabiner-elements"
-# Porting tool, to make Windows programs/games into native apps
-cask "kegworks"
-# Comic and manga converter for ebook readers
-cask "kindle-comic-converter"
-# Turns comics, graphic novels and manga into Kindle books
-cask "kindle-comic-creator"
 # Kubernetes IDE
 cask "lens"
-# Open-source firewall to block unknown outgoing connections
-cask "lulu"
 # Clipboard manager
 cask "maccy"
 # File system integration
 cask "macfuse"
 # VPN client
 cask "mullvadvpn"
-# Network monitor
-cask "netiquette"
-# Reverse proxy, secure introspectable tunnels to localhost
-cask "ngrok"
-# Open-source software for live streaming and screen recording
-cask "obs"
 # Replacement for Docker Desktop
 cask "orbstack"
 # Remote desktop
 cask "parsec"
-# App wrapper for Postgres
-cask "postgres-unofficial"
 # OpenVPN client
 cask "pritunl"
 # Thumbnails, static previews, cover art and metadata for video files
 cask "qlvideo"
-# Standalone app for debugging React Native apps
-cask "react-native-debugger"
 # Modified browser that helps in responsive web development
 cask "responsively"
 # Data science software focusing on R and Python
 cask "rstudio"
-# MySQL/MariaDB database management
-cask "sequel-ace"
 # Sound and audio controller
 cask "soundsource"
 # Music streaming service
@@ -519,12 +467,6 @@ cask "steam"
 cask "steamcmd"
 # Break time reminder app
 cask "stretchly"
-# Task manager for teams
-cask "taskade"
-# SSH client
-cask "termius"
-# Inserts pre-made snippets of text anywhere
-cask "textexpander"
 # General-purpose text editor
 cask "textmate"
 # Unpacks archive files
@@ -533,24 +475,16 @@ cask "the-unarchiver"
 cask "todoist"
 # Open-source BitTorrent client
 cask "transmission"
-# 3D printer and slicing GUI
-cask "ultimaker-cura"
 # Virtual machines UI using QEMU
 cask "utm"
-# Disk encryption software focusing on security based on TrueCrypt
-cask "veracrypt"
 # Open-source code editor
 cask "visual-studio-code"
-# Open-source code editor
-cask "visual-studio-code@insiders"
 # Multimedia player
 cask "vlc"
 # Web browser plugin
 cask "vlc-webplugin"
 # Stream videos to mobile devices using VLC
 cask "vlcstreamer"
-# Binary releases of VS Code without MS branding/telemetry/licensing
-cask "vscodium"
 # Webcam suite
 cask "webcamoid"
 # Wine wrapper built with SwiftUI
@@ -562,9 +496,6 @@ cask "xquartz"
 # Yet another monitor
 cask "yam-display"
 mas "Amphetamine", id: 937984704
-mas "Clocker", id: 1056643111
-mas "Disk Speed Test", id: 425264550
-mas "Hidden Bar", id: 1452453066
 mas "Microsoft Remote Desktop", id: 1295203466
 mas "Muse", id: 1501563902
 mas "Spark", id: 1176895641
